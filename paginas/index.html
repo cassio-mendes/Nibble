@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TCC</title>
+
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background: linear-gradient(135deg, #e1e2e2, #c0d369);
+                font-family: Arial, sans-serif;
+            }
+
+            .login-container {
+                background: #242323;
+                padding: 3rem;
+                border-radius: 15px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                max-width: 400px;
+                width: 100%;
+            }
+
+            .login-container h1 {
+                text-align: center;
+                margin-bottom: 1.5rem;
+                color: #fff;
+            }
+
+            .input-group {
+                margin-bottom: 1.5rem;
+            }
+
+            .input-group label {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: #666;
+            }
+
+            .input-group input {
+                width: 100%;
+                padding: 0.75rem;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 1rem;
+            }
+
+            .input-group input:focus {
+                border-color: #c0d369;
+                outline: none;
+                box-shadow: 0 0 5px rgba(189, 197, 95, 0.5);
+            }
+
+            .login-btn {
+                width: 100%;
+                padding: 0.75rem;
+                background: #8c9b49;
+                border: none;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+
+            .login-btn:hover {
+                background: #76833d;
+            }
+
+            .forgot-password {
+                display: block;
+                text-align: center;
+                margin-top: 1rem;
+                color: #818a57;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .forgot-password:hover {
+                color: #c3d581;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <h1>Login</h1>
+            
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button class="login-btn" onclick="enviar()">Entrar</button>
+                <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                <a href="cadastro.html" class="forgot-password">Cadastrar</a>
+            
+        </div>
+    </body>
+</html>
+
+<script>
+    var request;
+
+    function enviar() {
+        try {
+            var senha = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+
+            request = new XMLHttpRequest();
+            request.addEventListener("readystatechange", processaDadoServidor, false);
+            request.open('GET', "http://4.228.227.52:8080/atividadelogin/autenticar?email=" + email + "&senha=" + senha, true)
+            request.send(null)
+
+        } catch (exception) {
+            alert('problema no envio de dados');
+        }
+    }
+
+    function processaDadoServidor() {
+        if (request.status == 200 && request.readyState == 4) { //status == 200 -> Houve um response para o request
+                                                            //readyState == 4 -> O código está na etapa de ler a mensagem do response
+            if(request.responseText === "true") { //Se o texto da mensagem for igual a "true"
+
+                alert("Logado com sucesso!")
+
+            } else if(request.responseText === "false") {//Se o texto da mensagem for igual a "false" 
+
+                alert('Credenciais incorretas...')
+
+            }
+        }
+    }
+</script>
