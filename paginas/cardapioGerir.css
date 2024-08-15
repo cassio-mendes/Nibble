@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e1e2e2, #f6e473);
+    font-family: Arial, sans-serif;
+}
+
+.cardapio-container {
+    background: #242323;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.cardapio-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: #c0d369;
+    outline: none;
+    box-shadow: 0 0 5px rgba(189, 197, 95, 0.5);
+}
+
+.cardapio-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #a89c4b;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.cardapio-btn:hover {
+    background: #857b3b;
+}
