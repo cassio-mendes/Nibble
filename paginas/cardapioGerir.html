@@ -30,16 +30,58 @@
                 <label for="preco-produto">Preço (R$)</label>
                 <input type="number" id="preco-produto" name="preco-produto" required>
             </div>
+
+            <div class = "input-group">
+                <label for="quant-produto">Quantidade: </label>
+                <input type="number" name="quant-produto" id="quant-produto">
+            </div>
+
             <div class="input-group">
                 <label for="descricao-produto">Descrição</label>
                 <textarea id="descricao-produto" name="descricao-produto" rows="4" required></textarea>
             </div>
+
+            <div id = "imgDiv">
+                <label for="img-produto" style = "color: #666666;">Imagem: </label>
+                <input type="file" name="img-produto" accept = "image/*" id ="img-produto" oninput="mostrarImg()">
+            </div>
+
             <button type="submit" class="cardapio-btn">Salvar</button>
         </form>
         <a href="cardapio.html">
             <button class="cardapio-btn">Voltar</button>
         </a>
     </div>
+
+    <script>
+        function mostrarImg() {
+            let img = document.createElement("img")
+            let input = document.getElementById("img-produto")
+            
+            let arquivo = input.files[0]
+
+            //if(arquivo && arquivo.type.startsWith === "image/*") {
+                let leitor = new FileReader()
+
+                leitor.onload = function (arq) {
+                    img.src = arq.target.result
+                    console.log(img.src)
+                }
+
+                leitor.readAsDataURL(arquivo)
+
+                if(arquivo.wi)
+
+                img.style.width = "500px"
+                img.style.height = "500px"
+                
+                let div = document.getElementById("imgDiv")
+                div.appendChild(img)
+            //} else {
+                //alert("Por favor, escolha um arquivo de imagem")
+            //}
+        }
+    </script>
 </body>
 
 </html>
