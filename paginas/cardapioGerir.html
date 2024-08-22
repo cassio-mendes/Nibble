@@ -72,7 +72,7 @@
                 //arq.target é o própio FileReader que carregou o arquivo, e result tem os dados que foram lidos
                 
                     img.onload = function() {
-                        let novoHeight = (img.naturalHeight * 500) / img.naturalWidth
+                        let novoHeight = (img.height * 500) / img.width
                         img.width = 500
                         img.height = novoHeight
                     }
