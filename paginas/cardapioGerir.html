@@ -31,7 +31,7 @@
                 <input type="number" id="preco-produto" name="preco-produto" required>
             </div>
 
-            <div class = "input-group">
+            <div class="input-group">
                 <label for="quant-produto">Quantidade: </label>
                 <input type="number" name="quant-produto" id="quant-produto">
             </div>
@@ -41,9 +41,9 @@
                 <textarea id="descricao-produto" name="descricao-produto" rows="4" required></textarea>
             </div>
 
-            <div id = "imgDiv">
-                <label for="img-produto" style = "color: #666666;">Imagem: </label>
-                <input type="file" name="img-produto" accept = "image/*" id ="img-produto" oninput="mostrarImg()">
+            <div id="imgDiv">
+                <label for="img-produto" style="color: #666666;">Imagem: </label>
+                <input type="file" name="img-produto" accept="image/*" id="img-produto" oninput="mostrarImg()"> <br><br>
             </div>
 
             <button type="submit" class="cardapio-btn">Salvar</button>
@@ -55,31 +55,35 @@
 
     <script>
         function mostrarImg() {
+            let div = document.getElementById("imgDiv")
+            let elementos = div.getElementsByTagName("img") //Contém os elementos img da div
+            
+            if(elementos[0] != null) { //Se houver um img, ele é removido para garantir que haja apenas uma imagem na tela
+                div.removeChild(elementos[0])
+            }   
+            
             let img = document.createElement("img")
             let input = document.getElementById("img-produto")
-            
-            let arquivo = input.files[0]
 
-            //if(arquivo && arquivo.type.startsWith === "image/*") {
-                let leitor = new FileReader()
+            let arquivo = input.files[0] //Armazena o primeiro (e único) arquivo selecionado pelo usuário
+            let leitor = new FileReader() //Um FileReader será usado para ler o arquivo 
 
-                leitor.onload = function (arq) {
+                leitor.onload = function (arq) { //Essa função será executada quando o arquivo terminar de ser lido
+                //arq.target é o própio FileReader que carregou o arquivo, e result tem os dados que foram lidos
+                
+                    img.onload = function() {
+                        let novoHeight = (img.naturalHeight * 500) / img.naturalWidth
+                        img.width = 500
+                        img.height = novoHeight
+                    }
+
                     img.src = arq.target.result
-                    console.log(img.src)
                 }
 
-                leitor.readAsDataURL(arquivo)
+            leitor.readAsDataURL(arquivo) //Aqui, a função acima é executada e o result é definido como uma String de base64 que será usada
+            //como URL de Imagem para mostrá-la na tela 
 
-                if(arquivo.wi)
-
-                img.style.width = "500px"
-                img.style.height = "500px"
-                
-                let div = document.getElementById("imgDiv")
-                div.appendChild(img)
-            //} else {
-                //alert("Por favor, escolha um arquivo de imagem")
-            //}
+            div.appendChild(img) //Mostrando a imagem inserida
         }
     </script>
 </body>
