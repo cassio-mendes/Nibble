@@ -95,15 +95,15 @@ header h1 {
 
 .menu-item img {
     width: 100%;
-    max-width: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 10px;
+    object-fit: scale-down;
 }
 
 .menu-item h3 {
     margin: 1rem 0;
 }
-
-
 
 .cart-container {
     background: #242323;
