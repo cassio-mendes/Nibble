@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/atualizarItem.css">
+    <title>Atualizar item do Cardápio</title>
+</head>
+
+<body>
+    <div class="cardapio-container">
+        <h1>Atualizar item do Cardápio</h1>
+        <form>
+            <div class="input-group">
+                <label for="nome-produto">Atualizar o nome do Produto</label>
+                <input type="text" id="atualiza-nome-produto" name="atualiza-nome-produto" required>
+            </div>
+            <div class="input-group">
+                <label for="preco-produto">Atualizar preço (R$)</label>
+                <input type="number" id="atualiza-preco-produto" name="atualiza-preco-produto" required>
+            </div>
+
+            <div class="input-group">
+                <label for="quant-produto">Atualizar quantidade: </label>
+                <input type="number" name="atualiza-quant-produto" id="atualiza-quant-produto">
+            </div>
+
+            <div class="input-group">
+                <label for="descricao-produto">Atualizar descrição do produto:</label>
+                <textarea id="atualiza-descricao-produto" name="atualiza-descricao-produto" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="cardapio-btn">Salvar</button>
+        </form>
+        <a href="cardapio.html">
+            <button class="cardapio-btn">Voltar</button>
+        </a>
+    </div>
+
+</body>
+</html>
