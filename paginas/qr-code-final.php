@@ -21,7 +21,7 @@
     <?php
         include_once "conexao.php";
 
-        $sql = "SELECT * FROM tbPessoa WHERE idPessoa = 32";
+        $sql = "SELECT * FROM usuario WHERE nome = 'Cássio';";
         $result = $connection->query($sql);
 
         $client;
@@ -29,8 +29,8 @@
 
         if($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $client = $row["nomePessoa"];
-                $product = $row["sobrenomePessoa"];
+                $client = $row["nome"];
+                $product = $row["senha"];
             }
         } else {
             echo "Deu ruim";
