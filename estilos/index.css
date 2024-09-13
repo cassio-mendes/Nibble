@@ -8,6 +8,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
+#logo {
+    margin-top: -239px;
+    margin-left: 18%;
+    width: 255px;
+    height: 255px;
+}
+
 .login-container {
     background: #242323;
     padding: 3rem;
