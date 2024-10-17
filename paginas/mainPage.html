@@ -13,6 +13,13 @@
         <img src="../img/hamb.png" alt="Logo do Site" id="logo">
         <script>
             let img = document.getElementById("logo")
+            img.onload = function () {
+                img.width = 255
+                img.height = 255
+            }
+        </script>
+        <h1>Bem-vindo Fulano</h1>
+        <p>O que você gostaria de fazer agora?</p>
 
             img.onload = function () {
                 img.width = 255
