@@ -16,5 +16,23 @@
         <label for="text">Status da compra: --- </label> <br><br> 
         <button>Voltar</button>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <script>
+        let img = document.getElementById("img")
+        let codigo = "Pastel de frango"
+
+        QRCode.toDataURL(codigo, function(err, url) { //Essa função, da biblioteca qrcode, irá criar uma imagem QR Code contendo codigo
+            if (err) throw err //Ignora possíveis erros  
+            
+            img.onload = function() { //Redimensiona a imagem quando ela tiver sido totalmente lida
+                let novoHeight = (img.height * 400) / img.width
+                img.width = 400
+                img.height = novoHeight
+            }
+
+            img.src = url //Mostra o QR Code pronto na tela
+        })
+    </script>
 </body>
 </html> 
