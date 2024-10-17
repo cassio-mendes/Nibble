@@ -10,10 +10,17 @@
 
 <body>
     <div class="mainPage-container">
-        <img src="https://via.placeholder.com/200x200.png?text=400x400" alt="Logo do Site" id="logo">
-        <h1>Bem-vindo à página inicial</h1>
-        <p>O que você gostaria de fazer agora?</p>
+        <img src="../img/hamb.png" alt="Logo do Site" id="logo">
+        <script>
+            let img = document.getElementById("logo")
 
+            img.onload = function () {
+                img.width = 255
+                img.height = 255
+            }
+        </script>
+        <h1>Bem-vindo fulano!</h1>
+        <p>O que você gostaria de fazer agora?</p>
         <div class="botao-container">
             <a href="cardapio.html" class="btn">Ver Cardápio</a>
             <a href="gerirCompra.html" class="btn">Minhas Compras</a>

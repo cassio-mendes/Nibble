@@ -8,27 +8,34 @@ body {
     font-family: Arial, sans-serif;
 }
 
-#logo {
-    margin-top: -299px;
-    margin-left: 18%;
-    width: 255px;
-    height: 255px;
-}
-
-.detalheCompra-container {
+.gerirPedidos-container {
     background: #242323;
-    padding: 4rem;
+    padding: 1rem;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 550px;
+    max-height: 910px;
     width: 100%;
-    margin-top: 120px;
+    height: 100%;
+    margin-top: 5px;
     color: white;
 }
 
-.detalheCompra-container h1 {
+.gerirPedidos-container h1 {
     text-align: center;
     margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.simple-text1 {
+    font-size: large;
+    padding: 6rem;
+    text-align: center;
+    color: #fff;
+}
+
+.simple-text2 {
+    font-size: large;
     color: #fff;
 }
 
@@ -56,7 +63,23 @@ body {
     box-shadow: 0 0 5px rgba(181, 182, 89, 0.5);
 }
 
-.detalheCompra-btn {
+.btn-info {
+    width: 60%;
+    padding: 0.75rem;
+    margin-left: 115px;
+    background: #a89c4b;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: large;
+    cursor: pointer;
+}
+
+.btn-info:hover {
+    background: #857b3b;
+}
+
+.gerirPedidos-btn {
     width: 100%;
     padding: 0.75rem;
     background: #a89c4b;
@@ -67,10 +90,9 @@ body {
     cursor: pointer;
 }
 
-.detalheCompra-btn:hover {
+.gerirPedidos-btn:hover {
     background: #857b3b;
 }
-
 .link {
     display: block;
     text-align: center;
