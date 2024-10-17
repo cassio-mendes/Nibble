@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de QR Code - Nibble</title>
+    <link rel="stylesheet" href="../estilos/leitorQRcode.css">
+</head>
+
+<body>
+    <div class="qr-container">
+        <h1>Leitor de QR Code</h1>
+        <p>Use a câmera do dispositivo para ler os QR codes dos pedidos.</p>
+
+        <div class="startScanner">
+            <video id="preview"></video>
+        </div>
+
+        <button class="btn" onclick="startScanner()">Iniciar Leitura</button>
+    </div>
