@@ -1,8 +1,18 @@
 <?php
-    $connection = new mysqli("52.233.90.226", "nibble", "-JCk]lNpJp", "nibble_db"); //No servidor
-    //$connection = new mysqli("localhost:3307", "nibble", "-JCk]lNpJp", "Nibble"); //Local
+    //Configurações do banco
+    $host = "127.0.0.1";
+    $dbname = "nibble_db";
+    $username = "nibble";
+    $password = "-JCk]lNpJp";
     
-    if ($connection->connect_error) {
-        die("Falha na conexão" . $connection->connect_error);
+    //Abrir conexão
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password); //PHP Data Object
+
+        //Define o modo de erro para possíveis exceções
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+        exit();
     }
 ?>
