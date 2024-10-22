@@ -1,75 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nibble</title>
-    <link rel="stylesheet" href="../nibble/estilos/index.css">
-    
+    <title>Bem-vindo ao Nibble</title>
+    <link rel="stylesheet" href="estilos/index.css">
 </head>
 
 <body>
-    <div class="login-container">
-        <img src="../nibble/img/hamb.png" alt="Logo do Site" id="logo">
+    <div class="inicio-container">
+        <img src="img/hamb.png" alt="Logo do Site" id="logo">
         <script>
             let img = document.getElementById("logo")
-
             img.onload = function () {
                 img.width = 255
                 img.height = 255
             }
         </script>
+        <h1>Bem-vindo ao Nibble!</h1>
+        <p>Realize pedidos no campus de forma mais prática e rápida! Como deseja continuar?</p>
 
-        <h1>Login</h1>
-        <div class="input-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+        <div class="botao-container">
+            <a href="paginas/login.html" class="btn">Entrar</a>
+            <a href="paginas/cadastro.html" class="btn">Criar Conta</a>
         </div>
-        <div class="input-group">
-            <label for="password">Senha</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button class="login-btn" onclick="enviar()">Entrar</button>
-        <a href="#" class="forgot-password">Esqueceu a senha?</a>
-        <a href="/nibble/paginas/cadastro.html" class="forgot-password">Cadastrar</a>
-
     </div>
 </body>
-
-
-<script>
-    var request;
-
-    function enviar() {
-        try {
-            var senha = document.getElementById("password").value;
-            var email = document.getElementById("email").value;
-
-            request = new XMLHttpRequest();
-            request.addEventListener("readystatechange", processaDadoServidor, false);
-            request.open('GET', "http://4.228.227.52:8080/atividadelogin/autenticar?email=" + email + "&senha=" + senha, true)
-            request.send(null)
-
-        } catch (exception) {
-            alert('problema no envio de dados');
-        }
-    }
-
-    function processaDadoServidor() {
-        if (request.status == 200 && request.readyState == 4) { //status == 200 -> Houve um response para o request
-            //readyState == 4 -> O código está na etapa de ler a mensagem do response
-            if (request.responseText === "true") { //Se o texto da mensagem for igual a "true"
-
-                alert("Logado com sucesso!")
-
-            } else if (request.responseText === "false") {//Se o texto da mensagem for igual a "false" 
-
-                alert('Credenciais incorretas...')
-
-            }
-        }
-    }
-</script>
 
 </html>

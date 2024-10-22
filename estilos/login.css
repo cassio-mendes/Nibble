@@ -9,24 +9,22 @@ body {
 }
 
 #logo {
-    margin-top: -299px;
+    margin-top: -239px;
     margin-left: 18%;
     width: 255px;
     height: 255px;
 }
 
-.detalheCompra-container {
+.login-container {
     background: #242323;
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
-    margin-top: 120px;
-    color: white;
 }
 
-.detalheCompra-container h1 {
+.login-container h1 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: #fff;
@@ -53,10 +51,10 @@ body {
 .input-group input:focus {
     border-color: #c0d369;
     outline: none;
-    box-shadow: 0 0 5px rgba(181, 182, 89, 0.5);
+    box-shadow: 0 0 5px rgba(189, 197, 95, 0.5);
 }
 
-.detalheCompra-btn {
+.login-btn {
     width: 100%;
     padding: 0.75rem;
     background: #a89c4b;
@@ -67,11 +65,11 @@ body {
     cursor: pointer;
 }
 
-.detalheCompra-btn:hover {
+.login-btn:hover {
     background: #857b3b;
 }
 
-.link {
+.forgot-password {
     display: block;
     text-align: center;
     margin-top: 1rem;
@@ -80,6 +78,6 @@ body {
     transition: color 0.3s;
 }
 
-.link:hover {
+.forgot-password:hover {
     color: #c3d581;
 }
