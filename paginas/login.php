@@ -60,9 +60,9 @@
                         //Agora falta saber se é um cliente ou admin
 
                         if(<?php echo $row["admin"] ?> === 1) { //É um adm
-                            location = "mainPageADM.html"
+                            location.href = "mainPageADM.html"
                         } else { //Não é um adm
-                            location = "mainPage.html"
+                            location.href = "mainPage.html"
                         }
                         <?php return; ?>
                     }
