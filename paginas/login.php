@@ -59,9 +59,9 @@
                         //LOGADO COM SUCESSO!!!
                         //Agora falta saber se é um cliente ou admin
 
-                        if(<?php echo $row["admin"] ?> === true) {
+                        if(<?php echo $row["admin"] ?> === 1) { //É um adm
                             location = "mainPageADM.html"
-                        } else {
+                        } else { //Não é um adm
                             location = "mainPage.html"
                         }
                         <?php return; ?>
