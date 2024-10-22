@@ -10,10 +10,9 @@
 
     if(count($result) > 0) {
         if($result["adm"] === 1){
-            header("mainPageADM.html");
-            echo "foi";
+            header("Location: /mainPageADM.html");
         } else { //Não é um adm
-            header("mainPage.html");
+            header("Location: /mainPage.html");
         }           
     } else {
         ?>
