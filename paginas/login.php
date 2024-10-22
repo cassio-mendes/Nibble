@@ -40,10 +40,11 @@
 
 <script>
 
-    function enviar () {
+    function enviar() {
+
         let email = document.getElementById("email").value;
         let senha = document.getElementById("password").value;
-        
+        alert ("oi")
         <?php
             include_once "conexao.php";
 
@@ -60,6 +61,7 @@
                         //Agora falta saber se é um cliente ou admin
 
                         if(<?php echo $row["admin"] ?> === 1) { //É um adm
+                            alert("entrou")
                             location.href = "mainPageADM.html"
                         } else { //Não é um adm
                             location.href = "mainPage.html"
