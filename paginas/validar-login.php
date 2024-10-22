@@ -12,7 +12,7 @@
         if($result["adm"] === 1){
             header("Location: /mainPageADM.html");
         } else { //Não é um adm
-            header("Location: /mainPage.html");
+            header("Location: /nibble/paginas/mainPage.html");
         }           
     } else {
         ?>
