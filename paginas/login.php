@@ -47,7 +47,7 @@
         <?php
             include_once "conexao.php";
 
-            $sql = "SELECT email, senha FROM usuario;";
+            $sql = "SELECT email, senha, admin FROM usuario;";
             $statement = $pdo->prepare($sql);
             $statement->execute();
 
