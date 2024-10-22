@@ -22,31 +22,23 @@
         </script>
 
         <h1>Login</h1>
-        <div class="input-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="input-group">
-            <label for="password">Senha</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button class="login-btn" onclick="enviar()">Entrar</button>
+        <form action="validar-login.php" method="post">
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button class="login-btn" type="submit">Entrar</button>
+        </form>
         <a href="#" class="forgot-password">Esqueceu a senha?</a>
         <a href="cadastro.html" class="forgot-password">Cadastrar</a>
         <a href="../index.html" class="forgot-password">Voltar ao Inicio</a>
     </div>
 </body>
-
-
 <script>
-
-    function enviar() {
-
-        alert ("oi")
-        
-        
-    }
-    
     /*var request;
 
     function enviar() {
@@ -79,5 +71,4 @@
         }
     }*/
 </script>
-
 </html>
