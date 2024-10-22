@@ -42,39 +42,9 @@
 
     function enviar() {
 
-        let email = document.getElementById("email").value;
-        let senha = document.getElementById("password").value;
         alert ("oi")
-        <?php
-            include_once "conexao.php";
-
-            $sql = "SELECT email, senha, admin FROM usuario;";
-            $statement = $pdo->prepare($sql);
-            $statement->execute();
-
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-            if(count($result) > 0) {
-                foreach ($result as $row) {
-                    ?>
-                    if(email === <?php echo $row["email"] ?> && senha === <?php echo $row["senha"] ?>) {
-                        //LOGADO COM SUCESSO!!!
-                        //Agora falta saber se é um cliente ou admin
-
-                        if(<?php echo $row["admin"] ?> === 1) { //É um adm
-                            alert("entrou")
-                            location.href = "mainPageADM.html"
-                        } else { //Não é um adm
-                            location.href = "mainPage.html"
-                        }
-                        <?php return; ?>
-                    }
-                    <?php
-                }
-                ?>
-                    alert("Email ou senha incorretos :(")
-                <?php
-            }
-        ?>
+        
+        
     }
     
     /*var request;
