@@ -28,6 +28,7 @@
             <a href="cardapioCliente.html" class="btn">Ver Cardápio</a>
             <a href="gerirCompra.html" class="btn">Minhas Compras</a>
             <a href="pratoDoDia.html" class="btn">Prato do Dia</a>
+            <a href="../index.html" class="btn">Sair</a>
         </div>
     </div>
 </body>
