@@ -10,7 +10,7 @@
     
     if(count($result) > 0) { //Se há pelo menos um resultado
         if($result["adm"] === 1){ //É um adm
-            header("Location: nibble/mainPageADM.html");
+            header("Location: /nibble/mainPageADM.html");
         } else { //Não é um adm
             header("Location: /nibble/paginas/mainPage.html");
         }           
