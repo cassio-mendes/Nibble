@@ -28,7 +28,13 @@
             <a href="cardapio.html" class="btn">Alterar Cardápio</a>
             <a href="gerirPedidos.html" class="btn">Pedidos realizados</a>
             <a href="pratoDoDiaADM.html" class="btn">Atualizar prato do Dia</a>
-            <a href="../index.html" class="btn">Sair</a>
+            <a href="../index.html" class="btn" onclick="sair()">Sair</a>
         </div>
     </div>
+
+    <script>
+        function sair() {
+            <?php session_destroy(); ?>
+        }
+    </script>
 </body>
