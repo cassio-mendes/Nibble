@@ -7,10 +7,13 @@
     $statement = $pdo->prepare($sql);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    echo "adm: $result[adm]";
+    echo "email: $result[email]";
+    echo "senha: $result[senha]";
 
     if(count($result) > 0) { //Se há pelo menos um resultado
         if($result["adm"] === 1){ //É um adm
-            header("Location: /mainPageADM.html");
+            header("Location: nibble/mainPageADM.html");
         } else { //Não é um adm
             header("Location: /nibble/paginas/mainPage.html");
         }           
