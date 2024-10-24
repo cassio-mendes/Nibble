@@ -6,10 +6,10 @@
     $sql = "SELECT email, senha, adm FROM usuario where email = '$email' and senha = '$senha'";
     $statement = $pdo->prepare($sql);
     $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    echo "adm:" . $result["adm"];
-    echo "email:" . $result["email"];
-    echo "senha:" . $result["senha"];
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    echo "adm:" . $result["adm"] . "\n";
+    echo "email:" . $result["email"] . "\n";
+    echo "senha:" . $result["senha"] . "\n";
 
     if(count($result) > 0) { //Se há pelo menos um resultado
         if($result["adm"] === 1){ //É um adm
