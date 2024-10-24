@@ -4,7 +4,7 @@
         session_destroy();
         header("Location: /nibble/paginas/error.html");
     } else {
-        if($_SESSION['adm'] === 1) {
+        if($_SESSION['adm'] === 0) {
             session_destroy();
             header("Location: /nibble/paginas/error.html");
         }
