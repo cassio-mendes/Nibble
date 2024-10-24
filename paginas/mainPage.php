@@ -1,5 +1,14 @@
 <?php 
     session_start();
+    if(!isset($_SESSION['adm'])) {
+        session_destroy();
+        header("Location: /nibble/paginas/error.html");
+    } else {
+        if($_SESSION['adm'] === 1) {
+            session_destroy();
+            header("Location: /nibble/paginas/error.html");
+        }
+    }
 ?>
 
 <!DOCTYPE html>
