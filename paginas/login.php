@@ -37,6 +37,12 @@
         <a href="cadastro.php" class="forgot-password">Cadastrar</a>
         <a href="../index.html" class="forgot-password">Voltar ao Inicio</a>
     </div>
+
+    <?php 
+        if(!empty($_GET['section'])) {
+            echo "FOI";
+       }
+    ?>
 </body>
 <script>
     /*var request;
