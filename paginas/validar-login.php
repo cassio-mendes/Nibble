@@ -7,9 +7,9 @@
     $statement = $pdo->prepare($sql);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    echo "adm: $result[adm]";
-    echo "email: $result[email]";
-    echo "senha: $result[senha]";
+    echo "adm:" . $result["adm"];
+    echo "email:" . $result["email"];
+    echo "senha:" . $result["senha"];
 
     if(count($result) > 0) { //Se há pelo menos um resultado
         if($result["adm"] === 1){ //É um adm
