@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -18,7 +22,7 @@
                 img.height = 255
             }
         </script>
-        <h1>Bem-vindo Fulano</h1>
+        <h1>Bem-vindo <?php echo $_SESSION['nome'] ?>!</h1>
         <p>O que você gostaria de fazer agora?</p>
         <div class="botao-container">
             <a href="cardapioCliente.html" class="btn">Ver Cardápio</a>
