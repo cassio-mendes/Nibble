@@ -1,3 +1,17 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['adm'])) {
+        if($_SESSION['adm'] === 1) {
+            header("Location: /nibble/paginas/mainPageADM.php");
+            exit();
+        } else {
+            header("Location: /nibble/paginas/mainPage.php");
+            exit();
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

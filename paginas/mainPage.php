@@ -1,3 +1,16 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['adm'])) {
+        session_destroy();
+        header("Location: /nibble/paginas/error.html");
+    } else {
+        if($_SESSION['adm'] === 1) {
+            session_destroy();
+            header("Location: /nibble/paginas/error.html");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -18,13 +31,15 @@
                 img.height = 255
             }
         </script>
-        <h1>Bem-vindo Fulano</h1>
+        <h1>Bem-vindo <?php echo $_SESSION['nome'] ?>!</h1>
         <p>O que você gostaria de fazer agora?</p>
         <div class="botao-container">
-            <a href="cardapio.html" class="btn">Alterar Cardápio</a>
-            <a href="gerirPedidos.html" class="btn">Pedidos realizados</a>
-            <a href="pratoDoDiaADM.html" class="btn">Atualizar prato do Dia</a>
-            <a href="inicio.html" class="btn">Sair</a>
+            <a href="cardapioCliente.html" class="btn">Ver Cardápio</a>
+            <a href="gerirCompra.html" class="btn">Minhas Compras</a>
+            <a href="pratoDoDia.html" class="btn">Prato do Dia</a>
+            <a href="../index.html" class="btn">Sair</a>
         </div>
     </div>
 </body>
+
+</html>
