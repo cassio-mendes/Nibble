@@ -1,3 +1,13 @@
+<?php
+    if(isset($_SESSION['adm'])) {
+        if($_SESSION['adm'] === 1) {
+            header("Location: /nibble/paginas/mainPageADM.php");
+        } else {
+            header("Location: /nibble/paginas/mainPage.php");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -37,12 +47,6 @@
         <a href="cadastro.php" class="forgot-password">Cadastrar</a>
         <a href="../index.html" class="forgot-password">Voltar ao Inicio</a>
     </div>
-
-    <?php 
-        if(!empty($_GET['section'])) {
-            echo "FOI";
-       }
-    ?>
 </body>
 <script>
     /*var request;
