@@ -21,7 +21,7 @@
         </script>
 
         <h1>Cadastro</h1>
-        <form>
+        <form action="validar-cadastro.php" method="post">
             <div class="input-group">
                 <label for="nome">Nome</label>
                 <input type="text" id="nome" name="nome" required>
@@ -41,9 +41,10 @@
             </div>
             
             <button type="submit" class="cadastro-btn">Cadastrar</button>
-            <a href="login.html" class="link">Entrar</a>
-            <a href="../index.html" class="link">Voltar ao Inicio</a>
         </form>
+        
+        <a href="login.html" class="link">Entrar</a>
+        <a href="../index.html" class="link">Voltar ao Inicio</a>
     </div>
 </body>
 

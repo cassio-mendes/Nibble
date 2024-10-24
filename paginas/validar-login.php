@@ -8,8 +8,8 @@
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    if(count($result) > 0) {
-        if($result["adm"] === 1){
+    if(count($result) > 0) { //Se há pelo menos um resultado
+        if($result["adm"] === 1){ //É um adm
             header("Location: /mainPageADM.html");
         } else { //Não é um adm
             header("Location: /nibble/paginas/mainPage.html");
@@ -17,7 +17,7 @@
     } else {
         ?>
         <script>
-        alert("Email ou senha incorretos :(")
+        alert("Email ou senha incorretos :(") //Erro de login
         </script>
         <?php
     }
