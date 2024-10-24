@@ -42,8 +42,8 @@
             
             <button type="submit" class="cadastro-btn">Cadastrar</button>
         </form>
-        
-        <a href="login.html" class="link">Entrar</a>
+
+        <a href="login.php" class="link">Entrar</a>
         <a href="../index.html" class="link">Voltar ao Inicio</a>
     </div>
 </body>

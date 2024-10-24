@@ -6,9 +6,9 @@
     $senha = $_POST["senha"];
     $telefone = $_POST["telefone"];
 
-    $sql = "INSERT INTO usuario (nome, email, senha, telefone) VALUES ('$nome', '$email', '$senha', $telefone);";
+    $sql = "INSERT INTO usuario (nome, email, senha, telefone, adm) VALUES ('$nome', '$email', '$senha', $telefone, false);";
     $statement = $pdo->prepare($sql);
     $statement->execute();
-    
+
     
 ?>

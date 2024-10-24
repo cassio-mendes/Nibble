@@ -34,7 +34,7 @@
             <button class="login-btn" type="submit">Entrar</button>
         </form>
         <a href="#" class="forgot-password">Esqueceu a senha?</a>
-        <a href="cadastro.html" class="forgot-password">Cadastrar</a>
+        <a href="cadastro.php" class="forgot-password">Cadastrar</a>
         <a href="../index.html" class="forgot-password">Voltar ao Inicio</a>
     </div>
 </body>
