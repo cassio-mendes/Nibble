@@ -28,7 +28,7 @@
             <a href="cardapio.html" class="btn">Alterar Cardápio</a>
             <a href="gerirPedidos.html" class="btn">Pedidos realizados</a>
             <a href="pratoDoDiaADM.html" class="btn">Atualizar prato do Dia</a>
-            <a href="inicio.html" class="btn">Sair</a>
+            <a href="index.html" class="btn">Sair</a>
         </div>
     </div>
 </body>

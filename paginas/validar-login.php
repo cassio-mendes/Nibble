@@ -17,9 +17,9 @@
         $_SESSION['adm'] = $result['adm'];
 
         if($_SESSION['adm'] === 1){ //É um adm
-            header("Location: /nibble/paginas/mainPageADM.html");
+            header("Location: /nibble/paginas/mainPageADM.php");
         } else { //Não é um adm
-            header("Location: /nibble/paginas/mainPage.html");
+            header("Location: /nibble/paginas/mainPage.php");
         }           
     } else {
         ?>
