@@ -2,10 +2,16 @@
     session_start();
     if(!isset($_SESSION['adm'])) {
         session_destroy();
+        ?>
+            <script>alert("IF 1")</script>
+        <?php
         header("Location: /nibble/paginas/error.html");
     } else {
         if($_SESSION['adm'] === 0) {
             session_destroy();
+            ?>
+                <script>alert("IF 2")</script>
+            <?php
             header("Location: /nibble/paginas/error.html");
         }
     }
