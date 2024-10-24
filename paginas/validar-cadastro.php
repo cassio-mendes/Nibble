@@ -10,5 +10,5 @@
     $statement = $pdo->prepare($sql);
     $statement->execute();
 
-    
+    header("Location: /nibble/paginas/login.php");
 ?>
