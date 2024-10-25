@@ -24,7 +24,8 @@
     } else {
         ?>
         <script>
-        alert("Email ou senha incorretos :(") //Erro de login
+            alert("Email ou senha incorretos :(") //Erro de login
+            history.back()
         </script>
         <?php
     }
