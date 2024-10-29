@@ -21,23 +21,23 @@
             <button class="btn">Voltar</button>
         </a>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsqr.min.js"></script>
+    <script>
+        const video = document.getElementById('video')
+        let link
+        
+        //Inicializa o leitor QR Code
+        const qrCode = new JsQr(video, {
+            fps: 10
+        })
+
+        //Função para lidar com os resultados
+        qrCode.on('decode', (result) => {
+            link = result.data
+            alert(link)
+        })   
+    </script>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsqr.min.js"></script>
-<script>
-    const video = document.getElementById('video')
-    let link
-    
-    //Inicializa o leitor QR Code
-    const qrCode = new JsQr(video, {
-        fps: 10
-    })
-
-    //Função para lidar com os resultados
-    qrCode.on('decode', (result) => {
-        link = result.data
-        alert(link)
-    })   
-</script>
 
 </html>
