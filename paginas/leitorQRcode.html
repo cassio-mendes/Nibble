@@ -14,15 +14,30 @@
         <p>Use a câmera do dispositivo para ler os QR codes dos pedidos.</p>
 
         <div class="startScanner">
-            <video id="preview"></video>
+            <video id="video"></video>
         </div>
 
-        <button class="btn" onclick="startScanner()">Iniciar Leitura</button>
+        <a href="../index.html">
+            <button class="btn">Voltar</button>
+        </a>
     </div>
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsqr.min.js"></script>
 <script>
+    const video = document.getElementById('video')
+    let link
     
+    //Inicializa o leitor QR Code
+    const qrCode = new JsQr(video, {
+        fps: 10
+    })
+
+    //Função para lidar com os resultados
+    qrCode.on('decode', (result) => {
+        link = result.data
+        alert(link)
+    })   
 </script>
 
 </html>
