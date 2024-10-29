@@ -1,11 +1,10 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['adm']) && $_SESSION['adm'] === 1) {
+    if(!isset($_SESSION['adm']) || $_SESSION['adm'] === 1) {
         session_destroy();
+        header("Location: /nibble/paginas/login.php");
+        exit();
     }
-
-    header("Location: /nibble/paginas/login.php");
-    exit();
 ?>
 
 <!DOCTYPE html>
