@@ -47,42 +47,10 @@
             </div>
             <button class="login-btn" type="submit">Entrar</button>
         </form>
-        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+        <a href="recuperarSenha.html" class="forgot-password">Esqueceu a senha?</a>
         <a href="cadastro.php" class="forgot-password">Cadastrar</a>
         <a href="../index.html" class="forgot-password">Voltar ao Inicio</a>
     </div>
 </body>
-<script>
-    /*var request;
 
-    function enviar() {
-        try {
-            var senha = document.getElementById("password").value;
-            var email = document.getElementById("email").value;
-
-            request = new XMLHttpRequest();
-            request.addEventListener("readystatechange", processaDadoServidor, false);
-            request.open('GET', "http://4.228.227.52:8080/atividadelogin/autenticar?email=" + email + "&senha=" + senha, true)
-            request.send(null)
-
-        } catch (exception) {
-            alert('problema no envio de dados');
-        }
-    }
-
-    function processaDadoServidor() {
-        if (request.status == 200 && request.readyState == 4) { //status == 200 -> Houve um response para o request
-            //readyState == 4 -> O código está na etapa de ler a mensagem do response
-            if (request.responseText === "true") { //Se o texto da mensagem for igual a "true"
-
-                alert("Logado com sucesso!")
-
-            } else if (request.responseText === "false") {//Se o texto da mensagem for igual a "false" 
-
-                alert('Credenciais incorretas...')
-
-            }
-        }
-    }*/
-</script>
 </html>

@@ -13,7 +13,7 @@
         <h1>Redefinir Senha</h1>
         <p>Insira seu e-mail para receber um link de redefinição de senha.</p>
 
-        <form action="enviarEmailRedefinicao" method="POST">
+        <form id = "email-form">
             <div class="input-group">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required>
@@ -21,8 +21,37 @@
             <button type="submit" class="reset-btn">Enviar Link</button>
         </form>
 
-        <a href="../index.html" class="link">Voltar ao Login</a>
+        <a href="login.php" class="link">Voltar ao Login</a>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        //Inicia o EmailJS com o seu user ID
+        (function(){
+          emailjs.init("PLBOnk1RvPBlgwrzV"); //Chave pública
+        })();
+    
+        //Função para enviar e-mail
+        document.getElementById('email-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+    
+        //Parâmetros do serviço de envio de email
+          const templateParams = {
+            user_email: document.getElementById('email').value,
+            link_redefine: "https://feiratec.dev.br/nibble/paginas/senhaRecuperada.html", 
+            from_name: 'Nibble'
+          };
+    
+        //Configuração dos serviços 
+          emailjs.send('service_b9zkh8s', 'template_o38aeff', templateParams) //ID do serviço e ID do template
+            .then(function(response) {
+              alert('E-mail enviado com sucesso :)', response.status, response.text);
+            }, function(error) {
+              console.log(error);
+              alert('verifique sua conexão ou sua chave', error);
+            });
+        });
+      </script>
 </body>
 
 </html>
