@@ -14,30 +14,30 @@
         <p>Use a câmera do dispositivo para ler os QR codes dos pedidos.</p>
 
         <div class="startScanner">
-            <video id="video"></video>
+            <video id="video" autoplay></video>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/zxing@0.7.3/lib/zxing.js"></script>
+        <script>
+            const video = document.getElementById('video');
+            const codeReader = new ZXing.BarcodeReader()
+
+            codeReader.decodeFromVideoDevice(undefined, video, (result, error) => {
+                if(result) {
+                    //Código lido com sucesso
+                    const link = result.text
+                    alert(link + '')
+                    //location.href = link
+                } else if(error) {
+                    alert('Erro ao processar: ' + error)
+                }
+            })
+        </script>
 
         <a href="../index.html">
             <button class="btn">Voltar</button>
         </a>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
-    <script>
-        const video = document.getElementById('video')
-        let link
-        
-        //Inicializa o leitor QR Code
-        const qrCode = new JsQr(video, {
-            fps: 10
-        })
-
-        //Função para lidar com os resultados
-        qrCode.on('decode', (result) => {
-            link = result.data
-            alert(link)
-        })   
-    </script>
 </body>
 
 </html>
