@@ -17,20 +17,28 @@
             <video id="video" autoplay></video>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/zxing@0.7.3/lib/zxing.js"></script>
-        <script>
-            const video = document.getElementById('video');
-            const codeReader = new ZXing.BarcodeReader()
+        <p style="color: white;" id="saida"></p>
 
-            codeReader.decodeFromVideoDevice(undefined, video, (result, error) => {
-                if(result) {
-                    //Código lido com sucesso
-                    const link = result.text
-                    alert(link + '')
-                    //location.href = link
-                } else if(error) {
-                    alert('Erro ao processar: ' + error)
-                }
+        <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js"></script>
+        <script>
+            const video = document.getElementById('video')
+            const saida = document.getElementById('saida')
+            let codeReader
+            let pronto = false
+            
+            window.addEventListener('load', function() {
+                codeReader = new ZXing.BrowserMultiFormatReader()
+                codeReader.decodeFromVideoDevice(undefined, 'video', (result, err) => {
+                    if(!pronto) {
+                        if(result) {
+                            //Código lido com sucesso
+                            const link = result.text
+                            saida.innerText = link
+                            //location.href = link
+                            pronto = true
+                        }
+                    }
+                })
             })
         </script>
 
