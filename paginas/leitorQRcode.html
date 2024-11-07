@@ -29,14 +29,12 @@
             window.addEventListener('load', function() {
                 codeReader = new ZXing.BrowserMultiFormatReader()
                 codeReader.decodeFromVideoDevice(undefined, 'video', (result, err) => {
-                    if(!pronto) {
-                        if(result) {
-                            //Código lido com sucesso
-                            const link = result.text
-                            saida.innerText = link
-                            //location.href = link
-                            pronto = true
-                        }
+                    if(!pronto && result) {
+                        //Código lido com sucesso
+                        const link = result.text
+                        saida.innerText = link
+                        //location.href = link
+                        pronto = true
                     }
                 })
             })
