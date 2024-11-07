@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e1e2e2, #f6e473);
+    font-family: Arial, sans-serif;
+}
+
+.reset-password-container {
+    text-align: center;
+    background: #242323;
+    padding: 4rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+#logo {
+    margin-top: -299px;
+    width: 255px;
+    height: 255px;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    color: #cbcbcb;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fafafa;
+}
+
+.input-group input {
+    width: 93.5%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    border-color: #c0d369;
+    outline: none;
+    box-shadow: 0 0 5px rgba(181, 182, 89, 0.5);
+}
+.botao-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #a89c4b;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #857b3b;
+}
