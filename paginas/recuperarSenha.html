@@ -36,7 +36,7 @@
       event.preventDefault();
 
       //Criação do código aleatório
-      let code = Math.floor(Math.random() * 900000) + 100000
+      let code = Math.floor(Math.random() * 9000000000) + 1000000000
 
       //Parâmetros do serviço de envio de email
       const templateParams = {
@@ -51,10 +51,6 @@
               headers: {'Content Type': 'application/json'}, //Indica que o conteúdo será enviado como JSON
               body: JSON.stringify({code: code}, {user_email: templateParams.user_email}) //Este é o corpo da requisição, que inclui
               //'code' e 'user_email' como objetos JSON, que serão enviados com as chaves 'code' e 'user_email' ao arquivo php
-
-              .catch(error => { //Caso de erro
-                console.error('Erro ao enviar o código para recuperação de senha: ' + error)
-              })
           })
       }
 
