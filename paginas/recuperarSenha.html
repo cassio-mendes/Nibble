@@ -51,10 +51,6 @@
               headers: {'Content Type': 'application/json'}, //Indica que o conteúdo será enviado como JSON
               body: JSON.stringify({code: code}, {user_email: templateParams.user_email}) //Este é o corpo da requisição, que inclui
               //'code' e 'user_email' como objetos JSON, que serão enviados com as chaves 'code' e 'user_email' ao arquivo php
-
-              .catch(error => { //Caso de erro
-                console.error('Erro ao enviar o código para recuperação de senha: ' + error)
-              })
           })
       }
 
