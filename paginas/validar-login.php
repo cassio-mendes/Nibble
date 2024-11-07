@@ -1,7 +1,7 @@
 <?php
     include_once "conexao.php";
     $email = $_POST["email"];
-    $senha = $_POST["password"];
+    $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT); //Criptografando a senha
 
     $sql = "SELECT * FROM usuario where email = '$email' and senha = '$senha'";
     $statement = $pdo->prepare($sql);
