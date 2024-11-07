@@ -2,56 +2,74 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilos/recuperarSenha.css">
-    <title>Redefinição de Senha - Nibble</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../estilos/recuperarSenha.css">
+  <title>Redefinição de Senha - Nibble</title>
 </head>
 
 <body>
-    <div class="reset-container">
-        <h1>Redefinir Senha</h1>
-        <p>Insira seu e-mail para receber um link de redefinição de senha.</p>
+  <div class="reset-container">
+    <h1>Redefinir Senha</h1>
+    <p>Insira seu e-mail para receber um link de redefinição de senha.</p>
 
-        <form id = "email-form">
-            <div class="input-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <button type="submit" class="reset-btn">Enviar Link</button>
-        </form>
+    <form id="email-form" action="verifica-email.php" method="POST">
+      <div class="input-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <button type="submit" class="reset-btn">Enviar Link</button>
+    </form>
 
-        <a href="login.php" class="link">Voltar ao Login</a>
-    </div>
+    <a href="login.php" class="link">Voltar ao Login</a>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        //Inicia o EmailJS com o seu user ID
-        (function(){
-          emailjs.init("PLBOnk1RvPBlgwrzV"); //Chave pública
-        })();
-    
-        //Função para enviar e-mail
-        document.getElementById('email-form').addEventListener('submit', function(event) {
-          event.preventDefault();
-    
-        //Parâmetros do serviço de envio de email
-          const templateParams = {
-            user_email: document.getElementById('email').value,
-            link_redefine: "https://feiratec.dev.br/nibble/paginas/senhaRecuperada.html", 
-            from_name: 'Nibble'
-          };
-    
-        //Configuração dos serviços 
-          emailjs.send('service_b9zkh8s', 'template_o38aeff', templateParams) //ID do serviço e ID do template
-            .then(function(response) {
-              alert('E-mail enviado com sucesso :)', response.status, response.text);
-            }, function(error) {
-              console.log(error);
-              alert('verifique sua conexão ou sua chave', error);
-            });
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    //Inicia o EmailJS com o seu user ID
+    (function () {
+      emailjs.init("PLBOnk1RvPBlgwrzV"); //Chave pública
+    })();
+
+    //Função para enviar e-mail
+    document.getElementById('email-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      //Criação do código aleatório
+      let code = Math.floor(Math.random() * 900000) + 100000
+
+      //Parâmetros do serviço de envio de email
+      const templateParams = {
+        user_email: document.getElementById('email').value,
+        link_redefine: "https://feiratec.dev.br/nibble/paginas/senhaRecuperada.html?code=" + code,
+        from_name: 'Nibble'
+      };
+
+      function enviarCode() {
+          fetch('registrar-code.php', { //Inicia um requerimento HTTP para o servidor pelo arquivo php
+              method: 'POST', //Método de envio
+              headers: {'Content Type': 'application/json'}, //Indica que o conteúdo será enviado como JSON
+              body: JSON.stringify({code: code}, {user_email: templateParams.user_email}) //Este é o corpo da requisição, que inclui
+              //'code' e 'user_email' como objetos JSON, que serão enviados com as chaves 'code' e 'user_email' ao arquivo php
+
+              .catch(error => { //Caso de erro
+                console.error('Erro ao enviar o código para recuperação de senha: ' + error)
+              })
+          })
+      }
+
+      enviarCode() //Executando a função de envio
+
+      //Configuração dos serviços 
+      emailjs.send('service_b9zkh8s', 'template_o38aeff', templateParams) //ID do serviço e ID do template
+        .then(function (response) {
+          alert('E-mail enviado com sucesso :)', response.status, response.text);
+        }, function (error) {
+          console.log(error);
+          alert('verifique sua conexão ou sua chave', error);
         });
-      </script>
+    });
+  </script>
 </body>
 
 </html>
