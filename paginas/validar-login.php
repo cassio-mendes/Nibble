@@ -3,12 +3,13 @@
     $email = $_POST["email"];
     $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT); //Criptografando a senha
 
-    $sql = "SELECT senha FROM usuario WHERE email = $email;";
+    $sql = "SELECT senha FROM usuario WHERE email = :email;";
     $statement = $pdo->prepare($sql);
+    $statement->bindParam(':email', $email);
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     
-    if(count($result) > 0 && password_verify($_POST["senha"], $senha)) { //Se há pelo menos um resultado e a senha é correta
+    if(count($result) > 0 && password_verify($senha, $result['senha'])) { //Se há pelo menos um resultado e a senha é correta
         session_start();
         $_SESSION['nome'] = $result['nome'];
         $_SESSION['email'] = $result['email'];
