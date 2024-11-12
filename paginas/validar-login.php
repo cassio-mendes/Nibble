@@ -4,9 +4,8 @@
     $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT); //Criptografando a senha
     //echo('Senha: ' . $_POST['senha'] . ' Criptografada: ' . $senha);
 
-    $sql = "SELECT senha FROM usuario WHERE email = ':email';";
+    $sql = "SELECT senha FROM usuario WHERE email = '" . $email . "';";
     $statement = $pdo->prepare($sql);
-    $statement->bindParam(':email', $email);
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     
