@@ -2,7 +2,7 @@
     include_once "conexao.php";
     $email = $_POST["email"];
     $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT); //Criptografando a senha
-    throw new Exception('Senha: ' . $_POST['senha'] . ' Criptografada: ' . $senha);
+    echo('Senha: ' . $_POST['senha'] . ' Criptografada: ' . $senha);
 
     $sql = "SELECT senha FROM usuario WHERE email = :email;";
     $statement = $pdo->prepare($sql);
@@ -11,7 +11,7 @@
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     
     if(!$result) {
-        throw new Exception('A sql não funcionou');
+        echo('A sql não funcionou');
     }
 
     if(count($result) > 0 && password_verify($senha, $result['senha'])) { //Se há pelo menos um resultado e a senha é correta
