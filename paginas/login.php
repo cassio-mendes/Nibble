@@ -43,7 +43,7 @@
             </div>
             <div class="input-group">
                 <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="senha" name="senha" required>
             </div>
             <button class="login-btn" type="submit">Entrar</button>
         </form>
