@@ -3,10 +3,10 @@
     
     try {
         $email = $_POST["email"];
-        $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT); //Criptografando a senha
+        $senha = $_POST["senha"]; //Criptografando a senha
         echo('Email: ' . $email);
 
-        $sql = "SELECT senha FROM usuario WHERE email = ':email';";
+        $sql = "SELECT * FROM usuario WHERE email = :email;";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(':email', $email);
         $statement->execute();
@@ -21,7 +21,6 @@
             session_start();
             $_SESSION['nome'] = $result['nome'];
             $_SESSION['email'] = $result['email'];
-            $_SESSION['senha'] = $result['senha'];
             $_SESSION['telefone'] = $result['telefone'];
             $_SESSION['adm'] = $result['adm'];
 
@@ -29,7 +28,9 @@
                 header("Location: /nibble/paginas/mainPageADM.php");
             } else { //Não é um adm
                 header("Location: /nibble/paginas/mainPage.php");
-            }           
+            }   
+            
+            exit(); //Finalizar a execução
         } else {
             ?>
             <script>

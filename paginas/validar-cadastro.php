@@ -6,7 +6,7 @@
     $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT); //Criptografando a senha
     $telefone = $_POST["telefone"];
 
-    $sql = "INSERT INTO usuario (nome, email, senha, telefone, adm) VALUES (':nome', ':email', ':senha', :telefone, false);";
+    $sql = "INSERT INTO usuario (nome, email, senha, telefone, adm) VALUES (:nome, :email, :senha, :telefone, false);";
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':nome', $nome);
     $statement->bindParam(':email', $email);
