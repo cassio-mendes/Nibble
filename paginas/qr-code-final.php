@@ -45,7 +45,7 @@
 
         let client = "Teste"
         let product = "Coxinha"
-        let codigo = "Cliente: " + client + "x1; Itens: " + product + "x1"
+        let codigo = "Cliente: " + client + "; Itens: " + product + " x1"
 
         QRCode.toDataURL(codigo, function(err, url) { //Essa função, da biblioteca qrcode, irá criar uma imagem QR Code contendo codigo
             if (err) throw err //Ignora possíveis erros  
