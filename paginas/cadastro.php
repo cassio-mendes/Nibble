@@ -50,7 +50,7 @@
 <script>
 //utilizando o jquery para formar a mascara do telefone
      $(document).ready(function() {
-  $('#tel').mask('00 00000-0000');
+  $('#tel').mask('00000000000');
      });
       
 </script>
