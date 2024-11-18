@@ -3,7 +3,7 @@
     
     try {
         $email = $_POST["email"];
-        $senha = $_POST["senha"]; //Criptografando a senha
+        $senha = $_POST["senha"]; //A senha só é criptografada no cadastro
         echo('Email: ' . $email);
 
         $sql = "SELECT * FROM usuario WHERE email = :email;";
