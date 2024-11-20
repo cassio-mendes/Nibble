@@ -1,15 +1,40 @@
+/* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: linear-gradient(135deg, #e1e2e2, #f6e473);
-    height: 100vh;
+    min-height: 100vh;
 }
 
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #242323;
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff;
+}
 
-.btn-carrinho {
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+/* Botões */
+.btn-carrinho, .btn-perfil {
     padding: 10px 20px;
     background-color: #4CAF50;
     border: none;
@@ -17,25 +42,7 @@ body {
     color: white;
     cursor: pointer;
     font-size: 1rem;
-    position: absolute;
-    top: 20px;
-    left: 1775px;
-    gap: 10px;
-    margin-top: 45px;
-}
-
-.btn-perfil {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    position: absolute;
-    top: 20px;
-    left: 1800px;
-    gap: 10px;
+    margin-left: 1rem;
 }
 
 .btn-adicionar {
@@ -52,27 +59,15 @@ body {
     background-color: #b7b02d;
 }
 
+/* Menu */
 section {
     display: flex;
-}
-
-header {
-    background-color: #242323;
-    padding: 1rem;
-    text-align: center;
-    align-content: center;
-    color: #fff;
-    height: 80px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-#logo {
-    margin-left: -600px;
-    margin-top: -176px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .menu-container {
@@ -80,7 +75,6 @@ header h1 {
     padding: 2rem;
     border-radius: 15px;
     max-width: 600px;
-    margin-right: 20px;
     color: #fff;
     margin-top: 15px;
 }
@@ -100,8 +94,8 @@ header h1 {
 
 .menu-item img {
     width: 100%;
-    width: 250px;
-    height: 250px;
+    max-width: 250px;
+    height: auto;
     border-radius: 10px;
     object-fit: scale-down;
 }
@@ -110,52 +104,28 @@ header h1 {
     margin: 1rem 0;
 }
 
-.cart-container {
-    background: #242323;
-    padding: 2rem;
-    border-radius: 15px;
-    max-width: 300px;
-    color: #fff;
-}
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
 
-.cart-container h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
+    #logo {
+        width: 40px;
+        margin-bottom: 1rem;
+    }
 
-#cart-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 1rem;
-}
+    header h1 {
+        font-size: 1.5rem;
+    }
 
-#cart-items li {
-    margin-bottom: 0.5rem;
-}
+    .btn-carrinho, .btn-perfil {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
 
-#total-price {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-#finalize-btn {
-    width: 100%;
-    padding: 0.75rem;
-    background: #a89c4b;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-#finalize-btn:hover {
-    background: #857b3b;
-}
-
-section {
-    display: flex;
-    margin-left: 590px;
+    .menu-container {
+        max-width: 100%;
+    }
 }

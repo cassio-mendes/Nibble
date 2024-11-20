@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../estilos/cardapioCliente.css">
     <title>Cardápio</title>
 </head>
@@ -11,14 +11,14 @@
 <body>
     <header>
         <h1>Cardápio</h1>
-    </header>
+    
     <section>
         <div class="botoes">
-            <img src="../img/hamb.png" alt="Logo do Site" id = "logo">
+            <img src="../img/hamb.png" alt="Logo do Site" id="logo">
             <script>
                 let img = document.getElementById("logo")
 
-                img.onload = function() {
+                img.onload = function () {
                     img.width = 200
                     img.height = 200
                 }
@@ -26,12 +26,12 @@
             </script>
 
             <a href="carrinho.html">
-                <button class="btn-carrinho">Carrinho</button>
             </a>
 
             <a href="perfilCliente.html">
                 <button class="btn-perfil">Perfil</button>
             </a>
+        </header>
         </div>
         <div class="menu-container">
             <h1>Bebidas</h1>
