@@ -36,7 +36,7 @@
             </div>
             <div class="input-group">
                 <label for="tel">Telefone</label>
-                <input type="tel" id="tel" placeholder="(00) 0000-0000" name="tel" required >
+                <input type="tel" id="tel" placeholder="(00)00000000" name="tel" required >
             </div>
             
             <button type="submit" class="cadastro-btn">Cadastrar</button>
