@@ -7,6 +7,9 @@
     $statement = $pdo->prepare($sql);
     $statement->execute();
     $result = $statement->fetch();
+    ?>
+        <script>alert($result);</script>
+    <?php
 
     if(count($result) > 0) { //O Usuário possui um email no sistema
         header("Location: /nibble/paginas/recuperarSenha.html");

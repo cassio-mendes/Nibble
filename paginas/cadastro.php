@@ -48,11 +48,10 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 <script>
-//utilizando o jquery para formar a mascara do telefone
-     $(document).ready(function() {
-  $('#tel').mask('00000000000');
-     });
-      
+    //utilizando o jquery para formar a mascara do telefone
+    $(document).ready(function() {
+        $('#tel').mask('00000000000');
+    });  
 </script>
 </body>
 </html>

@@ -13,7 +13,7 @@
     <h1>Redefinir Senha</h1>
     <p>Insira seu e-mail para receber um link de redefinição de senha.</p>
 
-    <form id="email-form" action="verifica-email.php" method="POST">
+    <form id="email-form" action="../model/verifica-email.php" method="POST">
       <div class="input-group">
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" required>
@@ -46,7 +46,7 @@
       };
 
       function enviarCode() {
-          fetch('registrar-code.php', { //Inicia um requerimento HTTP para o servidor pelo arquivo php
+          fetch('../model/registrar-code.php', { //Inicia um requerimento HTTP para o servidor pelo arquivo php
               method: 'POST', //Método de envio
               headers: {'Content Type': 'application/json'}, //Indica que o conteúdo será enviado como JSON
               body: JSON.stringify({code: code}, {user_email: templateParams.user_email}) //Este é o corpo da requisição, que inclui
