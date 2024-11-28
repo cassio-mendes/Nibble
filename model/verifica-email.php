@@ -10,7 +10,7 @@
     $result = $statement->fetch();
     
     if(count($result) > 0) { //O Usuário possui um email no sistema
-        //header("Location: /nibble/paginas/recuperarSenha.html");
+        header("Location: '../paginas/recuperarSenha.html'");
     } else {
         ?>
             <script>alert('Este email não está cadastrado')</script>
