@@ -15,6 +15,6 @@
         ?>
             <script>alert('Este email não está cadastrado')</script>
         <?php
-        header("Location: '/nibble/paginas/login.php'");
+        header("Location: '../paginas/login.php'");
     }
 ?>
