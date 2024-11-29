@@ -4,13 +4,13 @@
         $email = $_POST['email'];
 
         $sqlEmail = "SELECT email FROM usuario WHERE email = :email;";
-        $statementEmail = $pdo->prepare($sql);
+        $statementEmail = $pdo->prepare($sqlEmail);
         $statementEmail->bindParam(':email', $email);
         $statementEmail->execute();
-        $resultEmail = $statement->fetch();
+        $resultEmail = $statementEmail->fetch();
         ?><script>console.log("Result email: " + <?php $resultEmail['email'] ?>)</script><?php
 
-        if($result) { //O Usuário possui um email no sistema
+        if($resultEmail) { //O Usuário possui um email no sistema
             ?>
                 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
                 <script type="text/javascript">
@@ -32,7 +32,7 @@
                         $statementSelect = $pdo->prepare($sqlSelect);
                         $statementSelect->bindParam(':email', $email);
                         $statementSelect->execute();
-                        $resultSelect = $statement->fetch();
+                        $resultSelect = $statementSelect->fetch();
                         ?><script>console.log("Result ID: " + <?php $resultSelect['idUser'] ?>)</script><?php
 
                         //Criação do código aleatório
