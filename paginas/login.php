@@ -36,7 +36,7 @@
         </script>
 
         <h1>Login</h1>
-        <form action="validar-login.php" method="post">
+        <form action="../model/validar-login.php" method="post">
             <div class="input-group">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required>

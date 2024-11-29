@@ -21,7 +21,7 @@
         </script>
 
         <h1>Cadastro</h1>
-        <form action="validar-cadastro.php" method="post">
+        <form action="../model/validar-cadastro.php" method="post">
             <div class="input-group">
                 <label for="nome">Nome</label>
                 <input type="text" id="nome" name="nome" required>
