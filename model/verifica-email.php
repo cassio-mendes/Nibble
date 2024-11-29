@@ -16,6 +16,7 @@
         ?>
             <script>alert('Este email não está cadastrado')</script>
         <?php
-        header("Location: '../paginas/login.php'");
+        echo 'else';
+        //header("Location: '../paginas/login.php'");
     }
 ?>

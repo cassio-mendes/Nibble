@@ -33,7 +33,7 @@
             <a href="cardapio.html" class="btn">Alterar Cardápio</a>
             <a href="gerirPedidos.html" class="btn">Pedidos realizados</a>
             <a href="pratoDoDiaADM.html" class="btn">Atualizar prato do Dia</a>
-            <form action="../model/logout.php">
+            <form action="../controller/logout.php">
                 <button type="submit" class="btn">Sair</button>
             </form>
         </div>
