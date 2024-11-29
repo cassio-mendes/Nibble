@@ -10,7 +10,7 @@
     $statement->execute();
     $result = $statement->fetch();
     
-    if(count($result) > 0) { //O Usuário possui um email no sistema
+    if($result) { //O Usuário possui um email no sistema
         echo "Email existe";
         //header("Location: '../paginas/recuperarSenha.html'");
     } else {
