@@ -1,5 +1,5 @@
 <?php
-    include_once "conexao.php";
+    include_once "../config/conexao.php";
     
     //Aqui, a função file_get_contents lê o conteúdo recebido;
     //Já a função json_decode recebe a requisição HTTP para converter os dados num array PHP, onde true indica que esse array será
