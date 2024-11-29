@@ -11,9 +11,9 @@
         $result = $statement->fetch();
         
         if($result) { //O Usuário possui um email no sistema
-            header("Location: '../paginas/recuperarSenha.html'");
+            header("Location: '/nibble/paginas/recuperarSenha.html'");
         } else {
-            header("Location: '../paginas/login.php'");
+            header("Location: '/nibble/paginas/login.php'");
         }
     } catch(Error $erro) {
         echo "ERRO " . $erro->getMessage();
