@@ -3,9 +3,10 @@
 
     $email = $_POST['email'];
 
-    $sql = "SELECT email FROM usuario WHERE email = '$email';";
+    $sql = "SELECT email FROM usuario WHERE email = :email;";
     echo $sql;
     $statement = $pdo->prepare($sql);
+    $statement->bindParam(':email', $email);
     $statement->execute();
     $result = $statement->fetch();
     
