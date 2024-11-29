@@ -9,6 +9,9 @@
     $statement->bindParam(':email', $email);
     $statement->execute();
     $result = $statement->fetch();
+    ?>
+        <script>console.log("executou a query")</script>
+    <?php
     
     if($result) { //O Usuário possui um email no sistema
         ?>
