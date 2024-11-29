@@ -9,21 +9,11 @@
         $statement->bindParam(':email', $email);
         $statement->execute();
         $result = $statement->fetch();
-        ?>
-            <script>console.log("executou a query")</script>
-        <?php
         
         if($result) { //O Usuário possui um email no sistema
-            ?>
-                <script>console.log("Email existe")</script>
-            <?php
-            //header("Location: '../paginas/recuperarSenha.html'");
+            header("Location: '../paginas/recuperarSenha.html'");
         } else {
-            ?>
-                <script>console.log("Email não existe")</script>
-            <?php
-            echo 'else';
-            //header("Location: '../paginas/login.php'");
+            header("Location: '../paginas/login.php'");
         }
     } catch(Error $erro) {
         echo "ERRO " . $erro->getMessage();
