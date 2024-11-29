@@ -11,11 +11,13 @@
     $result = $statement->fetch();
     
     if($result) { //O Usuário possui um email no sistema
-        echo "Email existe";
+        ?>
+            <script>console.log("Email existe")</script>
+        <?php
         //header("Location: '../paginas/recuperarSenha.html'");
     } else {
         ?>
-            <script>alert('Este email não está cadastrado')</script>
+            <script>console.log("Email não existe")</script>
         <?php
         echo 'else';
         //header("Location: '../paginas/login.php'");
