@@ -1,12 +1,12 @@
 <?php
     session_start();
 
-    if(isset($_SESSION['nome']) && isset($_SESSION['email']) && isset($_SESSION['senha']) && isset($_SESSION['telefone'])) {
+    if(isset($_SESSION['nome']) && isset($_SESSION['email']) && isset($_SESSION['telefone'])) {
         $nome = $_SESSION['nome'];
         $email = $_SESSION['email'];
-        $senha = $_SESSION['senha'];
         $telefone = $_SESSION['telefone'];
     } else {
+
         header('Location: /nibble/paginas/login.php');
     }
 ?>
