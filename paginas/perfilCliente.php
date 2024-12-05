@@ -6,7 +6,6 @@
         $email = $_SESSION['email'];
         $telefone = $_SESSION['telefone'];
     } else {
-
         header('Location: /nibble/paginas/login.php');
     }
 ?>
@@ -64,6 +63,19 @@
         const telefone = document.getElementById("telefone");
         const botaoAtualizar = document.getElementById("atualizar");
 
+        <?php
+            include_once "../config/conexao.php";
+
+            $sql = "SELECT * FROM usuario WHERE idUser = :idUser;";
+            $statement = $pdo->prepare($sql);
+            $statement->bindParam(":idUser", $_SESSION['idUser']);
+            $result = $statement->execute();
+        ?>
+
+        nome.value = <?php $result['nome'] ?>;
+        email.value = <?php $result['email'] ?>;
+        telefone.value = <?php $result['telefone'] ?>;
+
         botaoAtualizar.addEventListener('click', habilitarEdicao);
 
         function habilitarEdicao() {
@@ -72,16 +84,18 @@
 
         function salvarAlteracoes() {
             if(nome.value !== "" && email.value !== "" && senha.value !== "" && telefone !== "") {
-                fetch('seu_arquivo_php.php', {
-                    method: "POST",
-                    headers: {'Content-type': 'application/json'},
-                    body: JSON.stringify({ nome: nome.value, email: email.value, senha: senha.value, telefone: telefone.value,
-                        idUser: <?php $_SESSION['idUser']; ?> })
-
-                    .catch(error => {console.error('Erro:', error); }) 
-                });
+                try {
+                    fetch('../model/atualizar-perfil.php', {
+                        method: "POST",
+                        headers: {'Content-type': 'application/json'},
+                        body: JSON.stringify({ nome: nome.value, email: email.value, senha: senha.value, telefone: telefone.value,
+                            idUser: <?php $_SESSION['idUser']; ?> })
+                    });
                 
-                alterarFuncaoBotao(true, "Atualizar Dados", habilitarEdicao, salvarAlteracoes);
+                    alterarFuncaoBotao(true, "Atualizar Dados", habilitarEdicao, salvarAlteracoes);
+                } catch(error) {
+                    console.error(error);
+                }
             } else {
                 alert("Preencha todos os campos corretamente para atualizá-los");
                 alterarFuncaoBotao(true, "Atualizar Dados", habilitarEdicao, salvarAlteracoes);
