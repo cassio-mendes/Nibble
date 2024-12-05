@@ -23,6 +23,7 @@
             $_SESSION['email'] = $result['email'];
             $_SESSION['telefone'] = $result['telefone'];
             $_SESSION['adm'] = $result['adm'];
+            $_SESSION['idUser'] = $result['idUser'];
 
             if($_SESSION['adm'] === 1){ //É um adm
                 header("Location: /nibble/paginas/mainPageADM.php");

@@ -72,15 +72,15 @@
 
         function salvarAlteracoes() {
             if(nome.value !== "" && email.value !== "" && senha.value !== "" && telefone !== "") {
-                const xhr = new XMLHttpRequest();
-                xhr.open('POST', "../atualizarPerfil.php", true);
-                xhr.onload = function() {
-                    if(xhr.status !== 200) {
-                        console.error("Erro na atualização: " + xhr.responseText);
-                    }
-                }
-                xhr.send();
+                fetch('seu_arquivo_php.php', {
+                    method: "POST",
+                    headers: {'Content-type': 'application/json'},
+                    body: JSON.stringify({ nome: nome.value, email: email.value, senha: senha.value, telefone: telefone.value,
+                        idUser: <?php $_SESSION['idUser']; ?> })
 
+                    .catch(error => {console.error('Erro:', error); }) 
+                });
+                
                 alterarFuncaoBotao(true, "Atualizar Dados", habilitarEdicao, salvarAlteracoes);
             } else {
                 alert("Preencha todos os campos corretamente para atualizá-los");
