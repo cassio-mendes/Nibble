@@ -22,6 +22,11 @@
                 emailjs.init("PLBOnk1RvPBlgwrzV"); //Chave pública
             })();
 
+            <?php 
+                //Criação do código aleatório
+                $code = random_int(10000000000, 99999999999);
+            ?>
+
             //Parâmetros do serviço de envio de email
             const templateParams = {
                 user_email: <?php echo json_encode($email) ?>,
@@ -37,14 +42,11 @@
                     $statementSelect->bindParam(':email', $email);
                     $statementSelect->execute();
                     $resultSelect = $statementSelect->fetch();
-                    ?><script>console.log("Result ID: " + <?php echo json_encode($resultSelect['idUser']); ?>)</script><?php
+                    ?>console.log("Result ID: " + <?php echo json_encode($resultSelect['idUser']); ?>)<?php
                 } catch(Error $erro) {
                     echo "ERRO " . $erro->getMessage();
                 }
                     
-                //Criação do código aleatório
-                $code = random_int(10000000000, 99999999999);
-
                 try {
                     //Inserindo o código para recuperação de senha no banco
                     $sqlInsert = "INSERT INTO codigosRecuperacao (code, idUser) VALUES (:code, :idUser);";
@@ -52,7 +54,7 @@
                     $statement->bindParam(":code", $code);
                     $statement->bindParam(":idUser", $resultSelect['idUser']);
                     $statement->execute();
-                    ?><script>console.log("Registro codigos")</script><?php
+                    ?>console.log("Registro codigos")<?php
                 } catch(Error $erro) {
                     echo "ERRO " . $erro->getMessage();
                 }
