@@ -8,7 +8,7 @@
         $statementEmail->bindParam(':email', $email);
         $statementEmail->execute();
         $resultEmail = $statementEmail->fetch();
-        ?><script>console.log("Result email: " + <?php $resultEmail['email'] ?>)</script><?php
+        ?><script>console.log("Result email: " + <?php echo json_encode($resultEmail['email']); ?>)</script><?php
     } catch(Error $erro) {
         echo "ERRO " . $erro->getMessage();
     }
@@ -24,7 +24,7 @@
 
                 //Parâmetros do serviço de envio de email
                 const templateParams = {
-                    user_email: <?php $email ?>;
+                    user_email: <?php $email ?>,
                     link_redefine: "https://feiratec.dev.br/nibble/paginas/senhaRecuperada.html?code=" + code,
                     from_name: 'Nibble'
                 };
@@ -37,7 +37,7 @@
                         $statementSelect->bindParam(':email', $email);
                         $statementSelect->execute();
                         $resultSelect = $statementSelect->fetch();
-                        ?><script>console.log("Result ID: " + <?php $resultSelect['idUser'] ?>)</script><?php
+                        ?><script>console.log("Result ID: " + <?php echo json_encode($resultSelect['idUser']); ?>)</script><?php
                     } catch(Error $erro) {
                         echo "ERRO " . $erro->getMessage();
                     }
