@@ -8,7 +8,6 @@
         $statementEmail->bindParam(':email', $email);
         $statementEmail->execute();
         $resultEmail = $statementEmail->fetch();
-        ?><script>console.log("Result email: " + <?php echo json_encode($resultEmail['email']); ?>)</script><?php
     } catch(Error $erro) {
         echo "ERRO " . $erro->getMessage();
     }
