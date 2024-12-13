@@ -30,7 +30,7 @@
             //Parâmetros do serviço de envio de email
             const templateParams = {
                 user_email: <?php echo json_encode($email) ?>,
-                link_redefine: "https://feiratec.dev.br/nibble/paginas/senhaRecuperada.html?code=" + code,
+                link_redefine: "https://feiratec.dev.br/nibble/paginas/senhaRecuperada.html?code=" + <?php echo json_encode($code); ?>,
                 from_name: 'Nibble'
             };
 
