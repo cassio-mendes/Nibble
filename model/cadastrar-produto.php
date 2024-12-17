@@ -1,6 +1,6 @@
 <?php 
     include_once "../config/conexao.php";
-    echo 'ponto 1';
+    
     $nome = $_POST['nome'];
     $tipo = $_POST['tipo'];
     $preco = $_POST['preco'];
@@ -8,7 +8,7 @@
     $imagem = $_POST['img']; //Obtenha o link dessa imagem
     
     $target_dir = "img/" . basename( $_FILES["img"]["name"]);
-    echo 'ponto 2';
+    
     if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir)) {
         echo "O arquivo ". basename( $_FILES["img"]["name"]). " foi enviado.";
     } else {
