@@ -10,7 +10,7 @@
     $target_dir = "img/" . basename( $_FILES["img"]["name"]);
     
     if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir)) {
-        echo "O arquivo ". basename( $_FILES["uploadFile"]["name"]). " foi enviado.";
+        echo "O arquivo ". basename( $_FILES["img"]["name"]). " foi enviado.";
     } else {
         echo "Deu erro no upload";
     }
