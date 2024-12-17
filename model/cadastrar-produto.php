@@ -7,8 +7,7 @@
     $descricao = $_POST['descricao'];
     $imagem = $_POST['img']; //Obtenha o link dessa imagem
     
-    $target_dir = "img/";
-    $target_dir = $target_dir . basename( $_FILES["imagem"]["name"]);
+    $target_dir = "img/" . basename( $_FILES["imagem"]["name"]);
     
     if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $target_dir)) {
         echo "The file ". basename( $_FILES["uploadFile"]["name"]). " has been uploaded.";
