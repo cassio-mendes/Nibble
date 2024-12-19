@@ -11,14 +11,14 @@
 <body>
     <div class="cardapio-container">
         <h1>Adicionar item ao Cardápio</h1>
-        <form method = "post" action = "cadastrar-produto.php">
+        <form method = "post" action = "../model/cadastrar-produto.php">
             <div class="input-group">
-                <label for="nome-produto">Nome do Produto</label>
-                <input type="text" id="nome-produto" name="nome-produto" required>
+                <label for="nome">Nome do Produto</label>
+                <input type="text" id="nome" name="nome" required>
             </div>
             <div class="input-group">
-                <label for="tipo-produto">Tipo de Produto</label>
-                <select id="tipo-produto" name="tipo-produto" required>
+                <label for="tipo">Tipo de Produto</label>
+                <select id="tipo" name="tipo" required>
                     <option value="nenhum">Nenhum</option>
                     <option value="bebida">Bebida</option>
                     <option value="salgado">Salgados</option>
@@ -27,23 +27,18 @@
                 </select>
             </div>
             <div class="input-group">
-                <label for="preco-produto">Preço (R$)</label>
-                <input type="number" id="preco-produto" name="preco-produto" required>
+                <label for="preco">Preço (R$)</label>
+                <input type="number" id="preco" name="preco" required>
             </div>
 
             <div class="input-group">
-                <label for="quant-produto">Quantidade: </label>
-                <input type="number" name="quant-produto" id="quant-produto">
-            </div>
-
-            <div class="input-group">
-                <label for="descricao-produto">Descrição</label>
-                <textarea id="descricao-produto" name="descricao-produto" rows="4" required></textarea>
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" rows="4" required></textarea>
             </div>
 
             <div id="imgDiv">
-                <label for="img-produto" style="color: #666666;">Imagem: </label>
-                <input type="file" name="img-produto" accept="image/*" id="img-produto" oninput="mostrarImg()"> <br><br>
+                <label for="img" style="color: #666666;">Imagem: </label>
+                <input type="file" name="img" accept="image/*" id="img" oninput="mostrarImg()"> <br><br>
             </div>
 
             <button type="submit" class="cardapio-btn">Salvar</button>
@@ -63,7 +58,7 @@
             }   
             
             let img = document.createElement("img")
-            let input = document.getElementById("img-produto")
+            let input = document.getElementById("img")
 
             let arquivo = input.files[0] //Armazena o primeiro (e único) arquivo selecionado pelo usuário
             let leitor = new FileReader() //Um FileReader será usado para ler o arquivo 
