@@ -6,23 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilos/recuperarSenha.css">
     <title>Redefinição de Senha</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../estilos/recuperarSenha.css">
+  <title>Redefinição de Senha - Nibble</title>
 </head>
 
 <body>
-    <div class="reset-container">
-        <h1>Redefinir Senha</h1>
-        <p>Insira seu e-mail para receber um link de redefinição de senha.</p>
+  <div class="reset-container">
+    <h1>Redefinir Senha</h1>
+    <p>Insira seu e-mail para receber um link de redefinição de senha.</p>
 
-        <form action="enviarEmailRedefinicao" method="POST">
-            <div class="input-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <button type="submit" class="reset-btn">Enviar Link</button>
-        </form>
+    <form id="email-form" action="../model/verifica-email.php" method="POST">
+      <div class="input-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <button type="submit" class="reset-btn">Enviar Link</button>
+    </form>
 
-        <a href="../index.html" class="link">Voltar ao Login</a>
-    </div>
+    <a href="login.php" class="link">Voltar ao Login</a>
+  </div>
 </body>
 
 </html>

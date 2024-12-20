@@ -1,13 +1,9 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['adm'])) {
+    if(!isset($_SESSION['adm']) || $_SESSION['adm'] === 1) {
         session_destroy();
-        header("Location: /nibble/paginas/error.html");
-    } else {
-        if($_SESSION['adm'] === 1) {
-            session_destroy();
-            header("Location: /nibble/paginas/error.html");
-        }
+        header("Location: /nibble/paginas/login.php");
+        exit();
     }
 ?>
 
@@ -37,7 +33,9 @@
             <a href="cardapioCliente.html" class="btn">Ver Cardápio</a>
             <a href="gerirCompra.html" class="btn">Minhas Compras</a>
             <a href="pratoDoDia.html" class="btn">Prato do Dia</a>
-            <a href="../index.html" class="btn">Sair</a>
+            <form action="../controller/logout.php">
+                <button type="submit" class="btn">Sair</button>
+            </form>
         </div>
     </div>
 </body>

@@ -14,15 +14,36 @@
         <p>Use a câmera do dispositivo para ler os QR codes dos pedidos.</p>
 
         <div class="startScanner">
-            <video id="preview"></video>
+            <video id="video" autoplay></video>
         </div>
 
-        <button class="btn" onclick="startScanner()">Iniciar Leitura</button>
+        <p style="color: white;" id="saida"></p>
+
+        <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js"></script>
+        <script>
+            const video = document.getElementById('video')
+            const saida = document.getElementById('saida')
+            let codeReader
+            let pronto = false
+            
+            window.addEventListener('load', function() {
+                codeReader = new ZXing.BrowserMultiFormatReader()
+                codeReader.decodeFromVideoDevice(undefined, 'video', (result, err) => {
+                    if(!pronto && result) {
+                        //Código lido com sucesso
+                        const link = result.text
+                        saida.innerText = link
+                        //location.href = link
+                        pronto = true
+                    }
+                })
+            })
+        </script>
+
+        <a href="../index.html">
+            <button class="btn">Voltar</button>
+        </a>
     </div>
 </body>
-
-<script>
-    
-</script>
 
 </html>

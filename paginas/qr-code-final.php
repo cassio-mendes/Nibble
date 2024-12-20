@@ -18,34 +18,13 @@
         <input type="button" value="Voltar à Página Inicial" class="btn">
     </form>
 
-    <?php
-        include_once "conexao.php";
-
-        $sql = "SELECT * FROM usuario WHERE nome = 'Cássio';";
-        $result = $connection->query($sql);
-
-        $client;
-        $product;
-
-        if($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                $client = $row["nome"];
-                $product = $row["senha"];
-            }
-        } else {
-            echo "Deu ruim";
-        }
-
-        $connection->close();
-    ?>
-
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
     <script>
         let img = document.getElementById("img")
 
-        let client = "<?php echo $client ?>"
-        let product = "<?php echo $product ?>"
-        let codigo = "Cliente: " + client + "x1; Itens: " + product + "x1"
+        let client = "Teste"
+        let product = "Coxinha"
+        let codigo = "Cliente: " + client + "; Itens: " + product + " x1"
 
         QRCode.toDataURL(codigo, function(err, url) { //Essa função, da biblioteca qrcode, irá criar uma imagem QR Code contendo codigo
             if (err) throw err //Ignora possíveis erros  

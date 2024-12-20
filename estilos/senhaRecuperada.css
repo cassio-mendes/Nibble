@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.inicio-container {
+.reset-password-container {
     text-align: center;
     background: #242323;
     padding: 4rem;
@@ -30,11 +30,34 @@ h1 {
 }
 
 p {
-    color: #818a57;
+    color: #cbcbcb;
     margin-bottom: 2rem;
     font-size: 1.2rem;
 }
 
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fafafa;
+}
+
+.input-group input {
+    width: 93.5%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    border-color: #c0d369;
+    outline: none;
+    box-shadow: 0 0 5px rgba(181, 182, 89, 0.5);
+}
 .botao-container {
     display: flex;
     justify-content: center;
@@ -42,13 +65,14 @@ p {
 }
 
 .btn {
-    padding: 1rem 2rem;
-    background-color: #a89c4b;
-    color: #fff;
-    text-decoration: none;
+    width: 100%;
+    padding: 0.75rem;
+    background: #a89c4b;
+    border: none;
     border-radius: 5px;
+    color: #fff;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
 .btn:hover {
