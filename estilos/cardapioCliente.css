@@ -2,33 +2,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    align-items: flex-start;
     background: linear-gradient(450deg, #e1e2e2, #f6e473);
     height: 100vh;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #242323;
-    padding: 1rem 2rem;
-    color: #fff;
-    position: relative;
-}
-
-header #logo {
-    width: 150px;
-    height: auto;
-}
-
-header .buttons {
-    display: flex;
-    gap: 10px;
-}
-
-header .buttons .btn-cadastro, 
-header .buttons .btn-voltar, 
-header .buttons .btn-perfil {
+.btn-voltar{
     padding: 10px 20px;
     background-color: #4CAF50;
     border: none;
@@ -36,35 +16,88 @@ header .buttons .btn-perfil {
     color: white;
     cursor: pointer;
     font-size: 1rem;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    position: absolute;
+    top: 20px;
+    left: 1800px;
+    gap: 10px; 
+}
+.btn-perfil {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    position: absolute;
+    top: 20px;
+    left: 1800px;
+    gap: 10px;
+}
+.btn-carrinho {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    position: absolute;
+    top: 20px;
+    left: 180px;
+    gap: 10px;
 }
 
-header .buttons .btn-cadastro:hover,
-header .buttons .btn-voltar:hover,
-header .buttons .btn-perfil:hover {
+.btn-adicionar {
+    padding: 10px 20px;
+    background-color: #cfc839;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-adicionar:hover{
+    background-color: #cfc839;
+}
+
+.btn-perfil:hover{
     background-color: #45a049;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 80px);
-}
-main h1 {
-    font-size: 2.5rem;
-    color: #242323;
-    text-align: center;
-    margin: 0;
+.btn-carrinho:hover{
+    background-color: #45a049;
 }
 
+section {
+    display: flex;
+}
+
+header {
+    background-color: #242323;
+    padding: 1rem;
+    text-align: center;
+    align-content: center;
+    color: #fff;
+    height: 80px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+#logo {
+    margin-left: -660px;
+    margin-top: -100px;
+}
 .menu-container {
     background: #242323;
     padding: 2rem;
     border-radius: 15px;
     max-width: 600px;
+    margin-right: 20px;
     margin-top: 15px;
     color: #fff;
 }
@@ -80,19 +113,21 @@ main h1 {
     margin-bottom: 1.5rem;
     border-radius: 10px;
     text-align: center;
-    color: #fff;
 }
 
 .menu-item img {
     width: 100%;
-    max-width: 250px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 10px;
-    object-fit: cover;
-    margin-bottom: 1rem;
+    object-fit: scale-down;
 }
 
 .menu-item h3 {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+section {
+    display: flex;
+    margin-left: 590px;
 }
