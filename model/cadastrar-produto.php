@@ -19,7 +19,9 @@
             }
         } else {
             echo "O arquivo não chegou ou não temos permissão para escrever no diretório \n";
-            echo "primeiro: " . ($_FILES['img']['error'] === UPLOAD_ERR_OK) . " segundo: " . (is_writable($target_dir));
+            
+            if($_FILES['img']['error'] === UPLOAD_ERR_OK) {echo "PRIMEIRO";}
+            if(is_writable($target_dir)) {echo "SEGUNDO";}
         }
     } catch(Error $e) {
         echo "Deu erro no upload";
