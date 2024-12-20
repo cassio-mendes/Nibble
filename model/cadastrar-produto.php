@@ -8,8 +8,6 @@
     $imagem = $_POST['img']; //Obtenha o link dessa imagem
     
     $target_dir = "img/" . basename($_FILES["img"]["name"]);
-    echo "Arquivo: " . $_FILES["img"]["name"];
-    echo "Arquivo?: " . $_FILES["img"]["tmp_name"];
     echo "Diretório: " . $target_dir;
     
     try {
@@ -17,13 +15,16 @@
             if(move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir)) { //
                 echo "O arquivo ". basename( $_FILES["img"]["name"]). " foi enviado.";
             } else {
-                echo "Erro ao mover o arquivo: " . error_get_last()['message'];
+                echo "Erro ao mover o arquivo";
             }
         } else {
-            echo "O arquivo não chegou ou não temos permissão para escrever no diretório: " . error_get_last()['message'];
+            echo "O arquivo não chegou ou não temos permissão para escrever no diretório \n";
+            
+            if(!$_FILES['img']['error'] === UPLOAD_ERR_OK) {echo "PRIMEIRO";}
+            if(!is_writable($target_dir)) {echo "SEGUNDO";}
         }
     } catch(Error $e) {
-        echo "Deu erro no upload: " . error_get_last()['message'];
+        echo "Deu erro no upload";
     }
 
     /*try {
