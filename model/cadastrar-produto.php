@@ -13,10 +13,17 @@
     echo "Diretório: " . $target_dir;
     
     try {
-        move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir);
-        echo "O arquivo ". basename( $_FILES["img"]["name"]). " foi enviado.";
+        if($_FILES['img']['error'] === UPLOAD_ERR_OK && is_writable($target_dir)) { //O arquivo chegou e o diretório pode ter novos arq.
+            if(move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir)) { //
+                echo "O arquivo ". basename( $_FILES["img"]["name"]). " foi enviado.";
+            } else {
+                echo "Erro ao mover o arquivo: " . error_get_last()['message'];
+            }
+        } else {
+            echo "O arquivo não chegou ou não temos permissão para escrever no diretório: " . error_get_last()['message'];
+        }
     } catch(Error $e) {
-        echo "Deu erro no upload " . $e->getMessage();
+        echo "Deu erro no upload: " . error_get_last()['message'];
     }
 
     /*try {
