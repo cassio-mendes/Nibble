@@ -12,7 +12,9 @@
     
     try {
         if($_FILES['img']['error'] === UPLOAD_ERR_OK && is_writable($target_dir)) { //O arquivo chegou e o diretório pode ter novos arq.
-            if(move_uploaded_file($_FILES["img"]["tmp_name"], $target_dir)) { //
+            $deuCerto = file_put_contents($target_dir, file_get_contents($_FILES['img']['tmp_name']));
+            
+            if($deuCerto) { //
                 echo "O arquivo ". basename( $_FILES["img"]["name"]). " foi enviado.";
             } else {
                 echo "Erro ao mover o arquivo";
