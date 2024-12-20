@@ -7,7 +7,7 @@
     $descricao = $_POST['descricao'];
     $imagem = $_POST['img']; //Obtenha o link dessa imagem
     
-    $target_dir = "img/" . basename($_FILES["img"]["name"]);
+    $target_dir = "/img/" . basename($_FILES["img"]["name"]);
     echo "Diretório: " . $target_dir;
     
     try {
