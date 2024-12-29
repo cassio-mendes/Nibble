@@ -170,6 +170,23 @@
             </div>
         </div>
     </section>
+    <script>
+        const adicionarBotoes = document.querySelectorAll('.btn-adicionar');
+        adicionarBotoes.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const nome = item.getAttribute('data-name');
+                const preco = item.getAttribute('data-price');
+
+                // Salvar no LocalStorage
+                let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+                carrinho.push({ nome, preco });
+                localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+                alert(`${nome} foi adicionado ao carrinho!`);
+            });
+        });
+    </script>
 </body>
 
 </html>
