@@ -174,17 +174,26 @@
         const adicionarBotoes = document.querySelectorAll('.btn-adicionar');
         adicionarBotoes.forEach(btn => {
             btn.addEventListener('click', () => {
-                const item = btn.parentElement;
+                const item = btn.closest('.menu-item');
+                if (!item) {
+                    alert("item nao encontrado");
+                    return;
+                }
                 const nome = item.getAttribute('data-name');
                 const preco = item.getAttribute('data-price');
+                if (!nome || !preco) {
+                    alert("nome ou preco nao foi encongtrado");
+                    return;
+                }
                 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
                 carrinho.push({ nome, preco });
                 localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-                alert(`${nome} foi adicionado ao carrinho!`);
+                alert(`${nome} foi adicionado ao carrinho`);
             });
         });
     </script>
+
 </body>
 
 </html>
