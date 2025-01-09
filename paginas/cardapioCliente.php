@@ -35,7 +35,7 @@
                     img.height = 200
                 }
             </script>
-            <a href="Carrinho.php">
+            <a href="carrinho.php">
                 <button class="btn-carrinho">Carrinho</button>
             </a>
         </div>
