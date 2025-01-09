@@ -7,6 +7,11 @@ body {
     background: linear-gradient(450deg, #e1e2e2, #f6e473);
     height: 100vh;
 }
+
+#logo {
+    margin-left: -10px;
+    margin-top: -176px;
+}
 .btn-finalizar-compra{
     padding: 10px 20px;
     background-color: #4CAF50;
