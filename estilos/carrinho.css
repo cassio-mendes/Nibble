@@ -35,10 +35,10 @@ body {
     font-size: 1rem;
 }
 .btn-finalizar-compra:hover{
-    background-color: #4CAF49;
+    background-color: #449a41;
 }
 .btn-continuar-comprando:hover{
-    background-color: #cfc839;
+    background-color: #a59f2c;
 }
 .btn-cancelar-compra:hover{
     background-color: #973838;
