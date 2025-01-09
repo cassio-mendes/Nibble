@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['adm'])) {
+        session_destroy();
+        header("Location: /nibble/paginas/login.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
