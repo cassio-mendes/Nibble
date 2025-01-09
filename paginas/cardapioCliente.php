@@ -23,7 +23,7 @@
     </header>
     <section>
         <div class="botoes">
-            <a href="mainPageADM.html">
+            <a href="mainPage.php">
                 <img src="../img/hamb.png" alt="Logo do Site" id="logo">
             </a>
 
@@ -35,7 +35,7 @@
                     img.height = 200
                 }
             </script>
-            <a href="Carrinho.html">
+            <a href="Carrinho.php">
                 <button class="btn-carrinho">Carrinho</button>
             </a>
         </div>
@@ -46,7 +46,7 @@
                 <img src="../img/fanta.png" alt="Refri de Laranja">
                 <h3>Fanta Laranja - R$ 3,00</h3>
                 <p>Refrigerante "fanta" de laranja</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar" onclick>Adicionar ao Carrinho</button>
                 </a>
             </form>
@@ -55,7 +55,7 @@
                 <img src="../img/cocacola.png" alt="Refri Coca">
                 <h3>Coca-cola - R$ 3,00</h3>
                 <p>Refrigerante coca-cola</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -64,7 +64,7 @@
                 <img src="../img/guarana.png" alt="Guaraná">
                 <h3>Guaraná - R$ 3,00</h3>
                 <p>Refrigerante Guaraná</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -73,7 +73,7 @@
                 <img src="../img/sprite.png" alt="Sprite">
                 <h3>Sprite - R$ 3,00</h3>
                 <p>Refrigerante Sprite</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -81,7 +81,7 @@
                 <img src="../img/cafe.png" alt="Café">
                 <h3>Café - R$ 1,00</h3>
                 <p>Café</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -89,7 +89,7 @@
                 <img src="../img/agua.png" alt="Água">
                 <h3>Água - R$ 2,00</h3>
                 <p>Água sem Gás</p>
-                <a href="carrinho.html"></a>
+                <a href="carrinho.php"></a>
                 <button class="btn-adicionar">Adicionar ao Carrinho</button>
             </div>
             <div class="menu-item" data-name="Água com Gás" data-price="2.50" data-description="Água com Gás"
@@ -97,7 +97,7 @@
                 <img src="../img/aguagas.png" alt="Água com Gás">
                 <h3>Água com Gás - R$ 2,50</h3>
                 <p>Água com Gás</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -110,7 +110,7 @@
                 <img src="../img/coxinha.jpg" alt="Coxinha">
                 <h3>Coxinha - R$ 6,50</h3>
                 <p>Salgado</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -119,7 +119,7 @@
                 <img src="../img/minipizza.png" alt="MiniPizza">
                 <h3>MiniPizza - R$ 3,00</h3>
                 <p>Salgado</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -128,7 +128,7 @@
                 <img src="../img/paodequeijo.png" alt="Pão de Queijo">
                 <h3>Pão de Queijo - R$ 3,00</h3>
                 <p>Salgado</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -137,7 +137,7 @@
                 <img src="../img/salsicha.png" alt="Salsichão">
                 <h3>Salsichãoo - R$ 6,50</h3>
                 <p>Salgado</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -146,7 +146,7 @@
                 <img src="../img/joelho.jpg" alt="Joelho">
                 <h3>Joelho - R$ 6,50</h3>
                 <p>Salgado</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -155,7 +155,7 @@
                 <img src="../img/empada.jpg" alt="Empada de Frango">
                 <h3>Empada de Frango - R$ 6,50</h3>
                 <p>Salgado</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -164,7 +164,7 @@
                 <img src="../img/empadaFrangoCap.jpg" alt="Empada de Frango com Catupiry">
                 <h3>Empada de Frango com Catupiry - R$ 6,50</h3>
                 <p>Salgado</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>
@@ -173,7 +173,7 @@
                 <img src="../img/empadaBacon.jpg" alt="Empada de Bacon">
                 <h3>Empada de Bacon - R$ 6,50</h3>
                 <p>Salgado</p>
-                <a href="carrinho.html">
+                <a href="carrinho.php">
                     <button class="btn-adicionar">Adicionar ao Carrinho</button>
                 </a>
             </div>

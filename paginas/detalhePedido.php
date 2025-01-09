@@ -23,7 +23,7 @@
         <!--AQUI VEM O CÓDIGO PHP PRO CONTEÚDO-->
         <label for="text">Valor do pedido: R$00,00</label> <br><br>
         <label for="text">Status do pedido: --- </label> <br><br>
-        <a href="gerirPedidos.html">
+        <a href="gerirPedidos.php">
         <button class="detalheCompra-btn">Voltar</button>
     </a> 
     </div>
