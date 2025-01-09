@@ -21,12 +21,22 @@
     <header>
         <h1>Seu Carrinho</h1>
     </header>
-    <section></section>
+    <section id="lista-carrinho">
+        <img src="../img/hamb.png" alt="Logo do Site" id = "logo">
+        <script>
+            let img = document.getElementById("logo")
+
+            img.onload = function() {
+                img.width = 200
+                img.height = 200
+            }
+        </script>
     <div class="botoes">
-        <button class="finalizar-compra">Finalizar Compra</button>
-        <button class="continuar-comprando">Continuar Comprando</button>
-        <button class="cancelar-compra">Cancelar Compra</button>
+        <button class="btn-finalizar-compra">Finalizar Compra</button>
+        <button class="btn-continuar-comprando">Continuar Comprando</button>
+        <button class="btn-cancelar-compra">Cancelar Compra</button>
     </div>
+</section>
 </body>
 
 </html>

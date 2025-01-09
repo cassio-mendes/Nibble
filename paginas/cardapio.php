@@ -23,7 +23,7 @@
     </header>
     <section>
         <div class="botoes">
-            <a href="mainPageADM.html">
+            <a href="mainPageADM.php">
                 <img src="../img/hamb.png" alt="Logo do Site" id = "logo">
             </a>
             
