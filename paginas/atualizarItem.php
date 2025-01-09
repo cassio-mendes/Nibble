@@ -42,7 +42,7 @@
 
             <button type="submit" class="cardapio-btn">Salvar</button>
         </form>
-        <a href="cardapio.html">
+        <a href="cardapio.php">
             <button class="cardapio-btn">Voltar</button>
         </a>
     </div>

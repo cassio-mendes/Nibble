@@ -35,10 +35,10 @@
                     img.height = 200
                 }
             </script>
-            <a href="cardapioGerir.html">
+            <a href="cardapioGerir.php">
                 <button class="btn-cadastro">Adicionar Item</button>
             </a>
-            <a href="mainPage.html">
+            <a href="mainPage.php">
                 <button class="btn-voltar">Voltar</button>
             </a>
 
@@ -51,7 +51,7 @@
                 <h3>Fanta Laranja - R$ 3,00</h3>
                 <p>Refrigerante "fanta" de laranja</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -62,7 +62,7 @@
                 <h3>Coca-cola - R$ 3,00</h3>
                 <p>Refrigerante coca-cola</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -73,7 +73,7 @@
                 <h3>Guaraná - R$ 3,00</h3>
                 <p>Refrigerante Guaraná</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -84,7 +84,7 @@
                 <h3>Sprite - R$ 3,00</h3>
                 <p>Refrigerante Sprite</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -94,7 +94,7 @@
                 <h3>Café - R$ 1,00</h3>
                 <p>Café</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -104,7 +104,7 @@
                 <h3>Água - R$ 2,00</h3>
                 <p>Água sem Gás</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -115,7 +115,7 @@
                 <h3>Água com Gás - R$ 2,50</h3>
                 <p>Água com Gás</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -130,7 +130,7 @@
                 <h3>Coxinha - R$ 6,50</h3>
                 <p>Salgado</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -141,7 +141,7 @@
                 <h3>MiniPizza - R$ 3,00</h3>
                 <p>Salgado</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -152,7 +152,7 @@
                 <h3>Pão de Queijo - R$ 3,00</h3>
                 <p>Salgado</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -163,7 +163,7 @@
                 <h3>Salsichãoo - R$ 6,50</h3>
                 <p>Salgado</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -174,7 +174,7 @@
                 <h3>Joelho - R$ 6,50</h3>
                 <p>Salgado</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -185,7 +185,7 @@
                 <h3>Empada de Frango - R$ 6,50</h3>
                 <p>Salgado</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -196,7 +196,7 @@
                 <h3>Empada de Frango com Catupiry - R$ 6,50</h3>
                 <p>Salgado</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>
@@ -207,7 +207,7 @@
                 <h3>Empada de Bacon - R$ 6,50</h3>
                 <p>Salgado</p>
                 <p>Em estoque: X</p>
-                <a href="atualizarItem.html">
+                <a href="atualizarItem.php">
                     <button class="btn-atualizar">Atualizar item</button>
                 </a>
                 <button class="btn-excluir">Excluir item</button>

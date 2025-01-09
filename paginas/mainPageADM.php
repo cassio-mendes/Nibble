@@ -30,9 +30,9 @@
         <h1>Bem-vindo <?php echo $_SESSION['nome'] ?>!</h1>
         <p>O que você gostaria de fazer agora?</p>
         <div class="botao-container">
-            <a href="cardapio.html" class="btn">Alterar Cardápio</a>
-            <a href="gerirPedidos.html" class="btn">Pedidos realizados</a>
-            <a href="pratoDoDiaADM.html" class="btn">Atualizar prato do Dia</a>
+            <a href="cardapio.php" class="btn">Alterar Cardápio</a>
+            <a href="gerirPedidos.php" class="btn">Pedidos realizados</a>
+            <a href="pratoDoDiaADM.php" class="btn">Atualizar prato do Dia</a>
             <a href="perfilCliente.php" class="btn">Perfil</a>
             <form action="../controller/logout.php">
                 <button type="submit" class="btn">Sair</button>
