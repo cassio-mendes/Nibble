@@ -23,7 +23,7 @@
     </header>
     <section>
         <div class="botoes">
-            <a href="mainPageADM.php">
+            <a href="mainPage.php">
                 <img src="../img/hamb.png" alt="Logo do Site" id="logo">
             </a>
 
@@ -35,7 +35,7 @@
                     img.height = 200
                 }
             </script>
-            <a href="Carrinho.php">
+            <a href="carrinho.php">
                 <button class="btn-carrinho">Carrinho</button>
             </a>
         </div>
