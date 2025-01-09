@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['adm']) || $_SESSION['adm'] === 0) {
+    if(!isset($_SESSION['adm']) || $_SESSION['adm'] === 1) {
         session_destroy();
         header("Location: /nibble/paginas/login.php");
         exit();
@@ -52,7 +52,7 @@
 
             <button type="submit" class="cardapio-btn">Salvar</button>
         </form>
-        <a href="cardapio.html">
+        <a href="cardapio.php">
             <button class="cardapio-btn">Voltar</button>
         </a>
     </div>

@@ -38,7 +38,7 @@
             <a href="cardapioGerir.php">
                 <button class="btn-cadastro">Adicionar Item</button>
             </a>
-            <a href="mainPage.html">
+            <a href="mainPage.php">
                 <button class="btn-voltar">Voltar</button>
             </a>
 

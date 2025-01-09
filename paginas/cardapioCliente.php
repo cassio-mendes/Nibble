@@ -35,14 +35,14 @@
                     img.height = 200
                 }
             </script>
-            <a href="Carrinho.php">
+            <a href="carrinho.php">
                 <button class="btn-carrinho">Carrinho</button>
             </a>
         </div>
         <div class="menu-container">
             <h1>Bebidas</h1>
             <form class="menu-item" data-name="Fanta Laranja" data-price="3.00" data-description="Fanta laranja"
-                data-image="fanta.png" method="post" action="carrinho.html">
+                data-image="fanta.png" method="post" action="carrinho.php">
                 <img src="../img/fanta.png" alt="Refri de Laranja">
                 <h3>Fanta Laranja - R$ 3,00</h3>
                 <p>Refrigerante "fanta" de laranja</p>

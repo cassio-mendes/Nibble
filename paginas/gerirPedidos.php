@@ -25,7 +25,7 @@
         <label class="simple-text1" for="item">• Pedido feito por: --- </label> <label class="simple-text2"
             for="data">Data do pedido: --- </label>
         <br>
-        <a href="detalhePedido.html">
+        <a href="detalhePedido.php">
             <button class="btn-info"> Mais detalhes do Pedido </button>
         </a>
         <br><br><br>
@@ -33,7 +33,7 @@
         <label class="simple-text1" for="item">• Pedido feito por: --- </label> <label class="simple-text2"
             for="data">Data do pedido: --- </label>
         <br>
-        <a href="detalhePedido.html">
+        <a href="detalhePedido.php">
             <button class="btn-info"> Mais detalhes do Pedido </button>
         </a>
         <br><br><br>
@@ -41,7 +41,7 @@
         <label class="simple-text1" for="item">• Pedido feito por: --- </label> <label class="simple-text2"
             for="data">Data do pedido: --- </label>
         <br>
-        <a href="detalhePedido.html">
+        <a href="detalhePedido.php">
             <button class="btn-info"> Mais detalhes do pedido </button>
         </a>
         <br><br><br>
@@ -49,7 +49,7 @@
         <label class="simple-text1" for="item">• Pedido feito por: --- </label> <label class="simple-text2"
             for="data">Data do pedido: --- </label>
         <br>
-        <a href="detalhePedido.html">
+        <a href="detalhePedido.php">
             <button class="btn-info"> Mais detalhes do pedido </button>
         </a>
         <br><br><br>
@@ -57,7 +57,7 @@
         <label class="simple-text1" for="item">• Pedido feito por: --- </label> <label class="simple-text2"
             for="data">Data do pedido: --- </label>
         <br>
-        <a href="detalhePedido.html">
+        <a href="detalhePedido.php">
             <button class="btn-info"> Mais detalhes da compra </button>
         </a>
         <br><br><br>
@@ -65,14 +65,14 @@
         <label class="simple-text1" for="item">• Pedido feito por: --- </label> <label class="simple-text2"
             for="data">Data do pedido: --- </label>
         <br>
-        <a href="detalhePedido.html">
+        <a href="detalhePedido.php">
             <button class="btn-info"> Mais detalhes do pedido </button>
         </a>
         <br><br><br>   
         <label class="simple-text1" for="item">• Pedido feito por: --- </label> <label class="simple-text2"
             for="data">Data do pedido: --- </label>
         <br>
-        <a href="detalhePedido.html">
+        <a href="detalhePedido.php">
             <button class="btn-info"> Mais detalhes do pedido </button>
         </a>
         <br><br><br><br>
