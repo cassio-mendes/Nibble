@@ -5,41 +5,40 @@
     $tipo = $_POST['tipo'];
     $preco = $_POST['preco'];
     $descricao = $_POST['descricao'];
-    $imagem = $_POST['img']; //Obtenha o link dessa imagem
+    $target_dir = "img/";
+    $target_file = $target_dir . basename($_FILES['img']['name']);
     
-    $target_dir = "img/" . basename($_POST['img']["name"]);
-
     echo "Diretório: " . $target_dir;
     
     try {
-        if($imagem['error'] === UPLOAD_ERR_OK && is_writable($target_dir)) { //O arquivo chegou e o diretório pode ter novos arq.
-            $deuCerto = file_put_contents($target_dir, file_get_contents($imagem['tmp_name']));
-            
-            if($deuCerto) { //
-                echo "O arquivo ". basename($imagem["name"]). " foi enviado.";
+        if ($_FILES['img']['error'] === UPLOAD_ERR_OK) {
+            if (move_uploaded_file($_FILES['img']['tmp_name'], $target_file)) {
+                echo "O arquivo " . basename($_FILES['img']['name']) . " foi enviado com sucesso.";
             } else {
-                echo "Erro ao mover o arquivo";
+                echo "Erro ao mover o arquivo.";
             }
         } else {
-            echo "O arquivo não chegou ou não temos permissão para escrever no diretório \n";
-            
-            if(!$imagem['error'] === UPLOAD_ERR_OK) {echo "PRIMEIRO";}
-            if(!is_writable($target_dir)) {echo "SEGUNDO";}
-        }
+            echo "Erro no upload do arquivo: " . $_FILES['img']['error'];
+        }        
     } catch(Error $e) {
         echo "Deu erro no upload";
     }
-
-    /*try {
-        //Tentando fazer o upload pro banco
-        $sql = "INSERT INTO produto (nome, tipo, preco, descricao, imagem) VALUES (:nome, :tipo, :preco, :descricao, :imagem);";
+    try {
+        $sql = "INSERT INTO produto (nome, tipo, preco, descricao, imagem) VALUES (:nome, :tipo, :preco, :descricao, :imagem)";
         $statement = $pdo->prepare($sql);
         $statement->bindParam(":nome", $nome);
         $statement->bindParam(":tipo", $tipo);
         $statement->bindParam(":preco", $preco);
         $statement->bindParam(":descricao", $descricao);
-        $statement->bindParam(":imagem", $imagem);
-    } catch (Error $e) {
-        echo "ERRO " . $e->getMessage();
-    }*/
+        $statement->bindParam(":imagem", $target_file);
+        
+        if ($statement->execute()) {
+            echo "Produto cadastrado com sucesso!";
+        } else {
+            echo "Erro ao cadastrar produto.";
+        }
+    } catch (PDOException $e) {
+        echo "Erro ao inserir no banco de dados: " . $e->getMessage();
+    }
+    
 ?>
