@@ -7,23 +7,23 @@
     $descricao = $_POST['descricao'];
     $imagem = $_POST['img']; //Obtenha o link dessa imagem
     
-    $target_dir = "img/" . basename($_FILES["img"]["name"]);
+    $target_dir = "img/" . basename($_POST['img']["name"]);
 
     echo "Diretório: " . $target_dir;
     
     try {
-        if($_FILES['img']['error'] === UPLOAD_ERR_OK && is_writable($target_dir)) { //O arquivo chegou e o diretório pode ter novos arq.
-            $deuCerto = file_put_contents($target_dir, file_get_contents($_FILES['img']['tmp_name']));
+        if($imagem['error'] === UPLOAD_ERR_OK && is_writable($target_dir)) { //O arquivo chegou e o diretório pode ter novos arq.
+            $deuCerto = file_put_contents($target_dir, file_get_contents($imagem['tmp_name']));
             
             if($deuCerto) { //
-                echo "O arquivo ". basename( $_FILES["img"]["name"]). " foi enviado.";
+                echo "O arquivo ". basename($imagem["name"]). " foi enviado.";
             } else {
                 echo "Erro ao mover o arquivo";
             }
         } else {
             echo "O arquivo não chegou ou não temos permissão para escrever no diretório \n";
             
-            if(!$_FILES['img']['error'] === UPLOAD_ERR_OK) {echo "PRIMEIRO";}
+            if(!$imagem['error'] === UPLOAD_ERR_OK) {echo "PRIMEIRO";}
             if(!is_writable($target_dir)) {echo "SEGUNDO";}
         }
     } catch(Error $e) {
