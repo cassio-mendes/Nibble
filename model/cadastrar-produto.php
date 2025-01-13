@@ -23,7 +23,7 @@
     } catch(Error $e) {
         echo "Deu erro no upload";
     }
-    /*
+    
     try {
         $sql = "INSERT INTO produto (nome, tipo, preco, descricao, imagem) VALUES (:nome, :tipo, :preco, :descricao, :imagem)";
         $statement = $pdo->prepare($sql);
@@ -40,6 +40,6 @@
         }
     } catch (PDOException $e) {
         echo "Erro ao inserir no banco de dados: " . $e->getMessage();
-    }*/
+    }
     
 ?>
