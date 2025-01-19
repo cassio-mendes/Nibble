@@ -12,7 +12,7 @@ try {
 
     if ($resultEmail) {
         // ciracao do codigo aleatorio de onzw digitos
-        $code = random_int(10000000000, 99999999999);
+        $code = random_int(1000000000, 2147483647);
 
         $sqlInsert = "INSERT INTO codigosRecuperacao (code, idUser) VALUES (:code, :idUser);";
         $statementInsert = $pdo->prepare($sqlInsert);
