@@ -1,76 +1,52 @@
 <?php
-    include_once "../config/conexao.php";
-    try {
-        $email = $_POST['email'];
+include_once "../config/conexao.php";
 
-        $sqlEmail = "SELECT email FROM usuario WHERE email = :email;";
-        $statementEmail = $pdo->prepare($sqlEmail);
-        $statementEmail->bindParam(':email', $email);
-        $statementEmail->execute();
-        $resultEmail = $statementEmail->fetch();
-    } catch(Error $erro) {
-        echo "ERRO " . $erro->getMessage();
-    }
+try {
+    $email = $_POST['email'];
 
-    if($resultEmail) { //O Usuário possui um email no sistema
+    $sqlEmail = "SELECT idUser, email FROM usuario WHERE email = :email;";
+    $statementEmail = $pdo->prepare($sqlEmail);
+    $statementEmail->bindParam(':email', $email);
+    $statementEmail->execute();
+    $resultEmail = $statementEmail->fetch(PDO::FETCH_ASSOC);
+
+    if ($resultEmail) {
+        // ciracao do codigo aleatorio de onzw digitos
+        $code = random_int(10000000000, 99999999999);
+
+        $sqlInsert = "INSERT INTO codigosRecuperacao (code, idUser) VALUES (:code, :idUser);";
+        $statementInsert = $pdo->prepare($sqlInsert);
+        $statementInsert->bindParam(":code", $code);
+        $statementInsert->bindParam(":idUser", $resultEmail['idUser']);
+        $statementInsert->execute();
+
         ?>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script type="text/javascript">
-            //Inicia o EmailJS com o seu user ID
             (function () {
-                emailjs.init("PLBOnk1RvPBlgwrzV"); //Chave pública
+                emailjs.init("PLBOnk1RvPBlgwrzV");
             })();
 
-            <?php 
-                //Criação do código aleatório
-                $code = random_int(10000000000, 99999999999);
-            ?>
-
-            //Parâmetros do serviço de envio de email
             const templateParams = {
-                user_email: <?php echo json_encode($email) ?>,
+                user_email: <?php echo json_encode($email); ?>,
                 link_redefine: "https://feiratec.dev.br/nibble/paginas/senhaRecuperada.html?code=" + <?php echo json_encode($code); ?>,
                 from_name: 'Nibble'
             };
 
-            <?php
-                try {
-                    //Obtendo o ID referente ao email enviado
-                    $sqlSelect = "SELECT idUser FROM usuario WHERE email = :email";
-                    $statementSelect = $pdo->prepare($sqlSelect);
-                    $statementSelect->bindParam(':email', $email);
-                    $statementSelect->execute();
-                    $resultSelect = $statementSelect->fetch();
-                    ?>console.log("Result ID: " + <?php echo json_encode($resultSelect['idUser']); ?>)<?php
-                } catch(Error $erro) {
-                    echo "ERRO " . $erro->getMessage();
-                }
-                    
-                try {
-                    //Inserindo o código para recuperação de senha no banco
-                    $sqlInsert = "INSERT INTO codigosRecuperacao (code, idUser) VALUES (:code, :idUser);";
-                    $statement = $pdo->prepare($sqlInsert);                        
-                    $statement->bindParam(":code", $code);
-                    $statement->bindParam(":idUser", $resultSelect['idUser']);
-                    $statement->execute();
-                    ?>console.log("Registro codigos")<?php
-                } catch(Error $erro) {
-                    echo "ERRO " . $erro->getMessage();
-                }
-                ?>
-
-                //Configuração dos serviços 
-                emailjs.send('service_b9zkh8s', 'template_o38aeff', templateParams) //ID do serviço e ID do template
+            emailjs.send('service_b9zkh8s', 'template_o38aeff', templateParams)
                 .then(function (response) {
-                    alert('E-mail enviado com sucesso :)', response.status, response.text)
+                    alert('E-mail enviado com sucesso!');
+                    window.location.href = "/nibble/paginas/login.php"; // Redireciona para o login
                 }, function (error) {
+                    alert('Erro ao enviar o e-mail. Verifique sua conexão.');
                     console.log(error);
-                    alert('verifique sua conexão ou sua chave', error)
                 });
-            </script>
+        </script>
         <?php
     } else {
-        ?><script>alert("Este email não está cadastrado. Redirecionando para o login...")</script><?php
-        header("Location: /nibble/paginas/login.php");
+        echo '<script>alert("Este email não está cadastrado. Redirecionando para o login..."); window.location.href="/nibble/paginas/login.php";</script>';
     }
+} catch (Exception $e) {
+    echo '<script>alert("Ocorreu um erro no sistema. Tente novamente mais tarde."); console.error('.json_encode($e->getMessage()).');</script>';
+}
 ?>

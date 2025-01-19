@@ -13,7 +13,7 @@
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         
         if(!$result) {
-            echo('A sql não funcionou');
+            echo '<script>alert("Email ou senha incorretos!"); window.location.href="/nibble/paginas/login.php";</script>';
             echo($result['senha']);
         }
 
