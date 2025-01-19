@@ -23,3 +23,22 @@ try {
         echo "<script>alert('Código de recuperação inválido ou expirado.'); window.location.href = 'login.php';</script>";
         exit();
     }
+
+    $idUser = $resultadoCodigo['idUser'];
+
+    $sqlatualizaSenha = "UPDATE usuario SET senha = :senha WHERE idUser = :idUser";
+    $stmtatualizaSenha = $pdo->prepare($sqlAtualizaSenha);
+    $stmtatualizaSenha->bindParam(':senha', $novasenhaCriptografada);
+    $stmtatualizaSenha->bindParam(':idUser', $idUser);
+    $stmtatualizaSenha->execute();
+
+    $sqlremoveCodigo = "DELETE FROM codigosRecuperacao WHERE code = :code";
+    $stmtremoveCodigo = $pdo->prepare($sqlRemoveCodigo);
+    $stmtremoveCodigo->bindParam(':code', $code);
+    $stmtremoveCodigo->execute();
+
+    echo "<script>alert('Senha redefinida com sucesso!'); window.location.href = 'login.php';</script>";
+} catch (Exception $e) {
+    echo "<script>alert('Ocorreu um erro ao redefinir a senha. Tente novamente mais tarde.');</script>";
+    error_log("Erro: " . $e->getMessage());
+}
