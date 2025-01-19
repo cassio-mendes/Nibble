@@ -20,10 +20,10 @@ try {
         $statementInsert->bindParam(":idUser", $resultEmail['idUser']);
         $statementInsert->execute();
 
-        ?>
+?>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script type="text/javascript">
-            (function () {
+            (function() {
                 emailjs.init("PLBOnk1RvPBlgwrzV");
             })();
 
@@ -34,19 +34,19 @@ try {
             };
 
             emailjs.send('service_b9zkh8s', 'template_o38aeff', templateParams)
-                .then(function (response) {
+                .then(function(response) {
                     alert('E-mail enviado com sucesso!');
                     window.location.href = "/nibble/paginas/login.php"; // Redireciona para o login
-                }, function (error) {
+                }, function(error) {
                     alert('Erro ao enviar o e-mail. Verifique sua conexão.');
                     console.log(error);
                 });
         </script>
-        <?php
+<?php
     } else {
         echo '<script>alert("Este email não está cadastrado. Redirecionando para o login..."); window.location.href="/nibble/paginas/login.php";</script>';
     }
 } catch (Exception $e) {
-    echo '<script>alert("Ocorreu um erro no sistema. Tente novamente mais tarde."); console.error('.json_encode($e->getMessage()).');</script>';
+    echo '<script>alert("Ocorreu um erro no sistema. Tente novamente mais tarde."); console.error(' . json_encode($e->getMessage()) . ');</script>';
 }
 ?>

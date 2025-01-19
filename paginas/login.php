@@ -1,15 +1,15 @@
 <?php
-    session_start();
+session_start();
 
-    if(isset($_SESSION['adm'])) {
-        if($_SESSION['adm'] === 1) {
-            header("Location: /nibble/paginas/mainPageADM.php");
-            exit();
-        } else {
-            header("Location: /nibble/paginas/mainPage.php");
-            exit();
-        }
+if (isset($_SESSION['adm'])) {
+    if ($_SESSION['adm'] === 1) {
+        header("Location: /nibble/paginas/mainPageADM.php");
+        exit();
+    } else {
+        header("Location: /nibble/paginas/mainPage.php");
+        exit();
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nibble</title>
     <link rel="stylesheet" href="../estilos/login.css">
-    
+
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         <script>
             let img = document.getElementById("logo")
 
-            img.onload = function () {
+            img.onload = function() {
                 img.width = 255
                 img.height = 255
             }
