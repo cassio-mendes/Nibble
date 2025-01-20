@@ -51,6 +51,7 @@
                         <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto['preco'] ?>"
                          data-description = "<?php echo $produto['descricao'] ?>" data-image = "../<?php echo $produto['img']?>"
                          method = "post" action = "../model/colocar-carrinho.php">
+                            <?php echo $produto['img']?>   
                             <img src="../img/<?php echo $produto['img']?>" alt="<?php echo $produto['descricao'] ?>">
                             <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
                             <p><?php echo $produto['descricao'] ?></p>
