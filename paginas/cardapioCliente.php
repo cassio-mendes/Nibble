@@ -49,8 +49,8 @@
                 <div class="menu-container">
                     <?php foreach($produtos as $produto) { ?>
                         <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto['preco'] ?>"
-                         data-description = "<?php echo $produto['descricao'] ?>" data-image = "#" method = "post"
-                         action = "../model/colocar-carrinho.php">
+                         data-description = "<?php echo $produto['descricao'] ?>" data-image = "../<?php echo $produto['img']?>"
+                         method = "post" action = "../model/colocar-carrinho.php">
                             <img src="../<?php echo $produto['img']?>" alt="<?php echo $produto['descricao'] ?>">
                             <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
                             <p><?php echo $produto['descricao'] ?></p>
