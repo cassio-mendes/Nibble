@@ -42,7 +42,7 @@
         <?php
             include "../model/consulta-produtos.php";
 
-            $produtos = listarProdutos();
+            $produtos = $result;
             echo $produtos;
             if(count($produtos) > 0) {
                 ?>
