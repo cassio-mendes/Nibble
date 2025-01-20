@@ -2,20 +2,25 @@
 include_once "../config/conexao.php";
 
 try {
+    if (!isset($_POST['code']) || empty($_POST['code'])) {
+        echo "<script>alert('Código de recuperação não encontrado.'); window.location.href = 'login.php';</script>";
+        exit();
+    }
+
+    $code = $_POST['code'];
     $novaSenha = $_POST['novaSenha'];
     $confirmarSenha = $_POST['confirmarSenha'];
-    $code = $_GET['code'];
 
     if ($novaSenha !== $confirmarSenha) {
         echo "<script>alert('As senhas não coincidem. Tente novamente.'); history.back();</script>";
         exit();
     }
 
-    $novasenhaCriptografada = password_hash($novaSenha, PASSWORD_DEFAULT);
+    $novaSenhaCriptografada = password_hash($novaSenha, PASSWORD_DEFAULT);
 
     $sqlCodigo = "SELECT idUser FROM codigosRecuperacao WHERE code = :code";
     $stmtCodigo = $pdo->prepare($sqlCodigo);
-    $stmtCodigo->bindParam(':code', $code);
+    $stmtCodigo->bindParam(':code', $code, PDO::PARAM_INT);
     $stmtCodigo->execute();
     $resultadoCodigo = $stmtCodigo->fetch(PDO::FETCH_ASSOC);
 
@@ -26,16 +31,16 @@ try {
 
     $idUser = $resultadoCodigo['idUser'];
 
-    $sqlatualizaSenha = "UPDATE usuario SET senha = :senha WHERE idUser = :idUser";
-    $stmtatualizaSenha = $pdo->prepare($sqlAtualizaSenha);
-    $stmtatualizaSenha->bindParam(':senha', $novasenhaCriptografada);
-    $stmtatualizaSenha->bindParam(':idUser', $idUser);
-    $stmtatualizaSenha->execute();
+    $sqlAtualizaSenha = "UPDATE usuario SET senha = :senha WHERE idUser = :idUser";
+    $stmtAtualizaSenha = $pdo->prepare($sqlAtualizaSenha);
+    $stmtAtualizaSenha->bindParam(':senha', $novaSenhaCriptografada);
+    $stmtAtualizaSenha->bindParam(':idUser', $idUser, PDO::PARAM_INT);
+    $stmtAtualizaSenha->execute();
 
-    $sqlremoveCodigo = "DELETE FROM codigosRecuperacao WHERE code = :code";
-    $stmtremoveCodigo = $pdo->prepare($sqlRemoveCodigo);
-    $stmtremoveCodigo->bindParam(':code', $code);
-    $stmtremoveCodigo->execute();
+    $sqlRemoveCodigo = "DELETE FROM codigosRecuperacao WHERE code = :code";
+    $stmtRemoveCodigo = $pdo->prepare($sqlRemoveCodigo);
+    $stmtRemoveCodigo->bindParam(':code', $code, PDO::PARAM_INT);
+    $stmtRemoveCodigo->execute();
 
     echo "<script>alert('Senha redefinida com sucesso!'); window.location.href = 'login.php';</script>";
 } catch (Exception $e) {

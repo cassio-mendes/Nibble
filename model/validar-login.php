@@ -14,7 +14,6 @@
         
         if(!$result) {
             echo '<script>alert("Email ou senha incorretos!"); window.location.href="/nibble/paginas/login.php";</script>';
-            echo($result['senha']);
         }
 
         if(count($result) > 0 && password_verify($senha, $result['senha'])) { //Se há pelo menos um resultado e a senha é correta
