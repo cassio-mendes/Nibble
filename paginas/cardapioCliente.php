@@ -43,6 +43,7 @@
             include "../model/consulta-produtos.php";
 
             $produtos = listarProdutos();
+            echo $produtos;
             if(count($produtos) > 0) {
                 ?>
                 <div class="menu-container">
