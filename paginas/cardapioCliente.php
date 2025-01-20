@@ -43,11 +43,11 @@
             include "../model/consulta-produtos.php";
 
             $produtos = $result;
-            echo $produtos;
+            
             if(count($produtos) > 0) {
                 ?>
                 <div class="menu-container">
-                    <?php foreach($produtos as $produto) { ?>
+                    <?php foreach($produtos as $produto) { echo $produto['nome'] . " " . $produto['preco']?>
                         <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto['preco'] ?>"
                          data-description = "<?php echo $produto['descricao'] ?>" data-image = "#" method = "post"
                          action = "../model/colocar-carrinho.php">
