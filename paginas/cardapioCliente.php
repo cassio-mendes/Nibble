@@ -47,16 +47,30 @@
             if(count($produtos) > 0) {
                 ?>
                 <div class="menu-container">
-                    <?php foreach($produtos as $produto) { ?>
-                        <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto['preco'] ?>"
-                         data-description = "<?php echo $produto['descricao'] ?>" data-image = "../<?php echo $produto['imagem']?>"
-                         method = "post" action = "../model/colocar-carrinho.php">
-                            <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
-                            <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
-                            <p><?php echo $produto['descricao'] ?></p>
-                            <button type="submit" class = "btn-adicionar"></button>
-                        </form>
-                    <?php } ?>
+                    <h1>Bebidas</h1>
+                    <?php foreach($produtos as $produto) {
+                        if($produto['tipo'] === 'Bebida' || $produto['tipo'] === "bebida") {
+                            ?>
+                                <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto    ['preco'] ?>" data-description = "<?php echo $produto['descricao'] ?>" data-image = "../<?php echo $produto['imagem']?>" method = "post" action = "../model/colocar-carrinho.php">
+                                    <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
+                                    <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
+                                    <p><?php echo $produto['descricao'] ?></p>
+                                    <button type="submit" class = "btn-adicionar"></button>
+                                </form>
+                            <?php
+                        } else if($produto['tipo'] === 'Comida' || $produto['tipo'] === "comida") {
+                            ?>
+                                <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto['preco'] ?>" data-description = "<?php echo $produto['descricao'] ?>" data-image = "../<?php echo $produto['imagem']?>" method = "post" action = "../model/colocar-carrinho.php">
+                                    <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
+                                    <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
+                                    <p><?php echo $produto['descricao'] ?></p>
+                                    <button type="submit" class = "btn-adicionar"></button>
+                                </form>
+                            <?php
+                        }
+                    
+                        
+                    } ?>
                 </div>
                 <?php
             }
