@@ -55,7 +55,7 @@
                                     <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
                                     <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
                                     <p><?php echo $produto['descricao'] ?></p>
-                                    <button type="submit" class = "btn-adicionar"></button>
+                                    <button type="submit" class = "btn-adicionar">Adicionar ao carrinho</button>
                                 </form>
                             <?php
                         }
@@ -71,7 +71,7 @@
                                     <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
                                     <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
                                     <p><?php echo $produto['descricao'] ?></p>
-                                    <button type="submit" class = "btn-adicionar"></button>
+                                    <button type="submit" class = "btn-adicionar">Adicionar ao carrinho</button>
                                 </form>
                             <?php
                         }
