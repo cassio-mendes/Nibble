@@ -58,9 +58,16 @@
                                     <button type="submit" class = "btn-adicionar"></button>
                                 </form>
                             <?php
-                        } else if($produto['tipo'] === 'Comida' || $produto['tipo'] === "comida") {
+                        }
+                    } ?>
+                </div>
+
+                <div class="menu-container">
+                    <h1>Lanches</h1>
+                    <?php foreach($produtos as $produto) {
+                        if($produto['tipo'] === 'Salgado' || $produto['tipo'] === "salgado" || $produto['tipo'] === 'doce' || $produto['tipo'] === "Doce") {
                             ?>
-                                <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto['preco'] ?>" data-description = "<?php echo $produto['descricao'] ?>" data-image = "../<?php echo $produto['imagem']?>" method = "post" action = "../model/colocar-carrinho.php">
+                                <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto    ['preco'] ?>" data-description = "<?php echo $produto['descricao'] ?>" data-image = "../<?php echo $produto['imagem']?>" method = "post" action = "../model/colocar-carrinho.php">
                                     <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
                                     <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
                                     <p><?php echo $produto['descricao'] ?></p>
@@ -68,8 +75,6 @@
                                 </form>
                             <?php
                         }
-                    
-                        
                     } ?>
                 </div>
                 <?php
