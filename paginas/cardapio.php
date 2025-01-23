@@ -43,176 +43,55 @@
             </a>
 
         </div>
-        <div class="menu-container">
-            <h1>Bebidas</h1>
-            <div class="menu-item" data-name="Fanta Laranja" data-price="3.00" data-description="Fanta laranja"
-                data-image="fanta.png">
-                <img src="../img/fanta.png" alt="Refri de Laranja">
-                <h3>Fanta Laranja - R$ 3,00</h3>
-                <p>Refrigerante "fanta" de laranja</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Coca-cola" data-price="3.00" data-description="Coca-cola"
-                data-image="cocacola.jpg">
-                <img src="../img/cocacola.png" alt="Refri Coca">
-                <h3>Coca-cola - R$ 3,00</h3>
-                <p>Refrigerante coca-cola</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Guaraná" data-price="3.00" data-description="Guaraná"
-                data-image="guarana.png">
-                <img src="../img/guarana.png" alt="Guaraná">
-                <h3>Guaraná - R$ 3,00</h3>
-                <p>Refrigerante Guaraná</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Sprite" data-price="3.00" data-description="Sprite"
-                data-image="sprite.png">
-                <img src="../img/sprite.png" alt="Sprite">
-                <h3>Sprite - R$ 3,00</h3>
-                <p>Refrigerante Sprite</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Café" data-price="1.00" data-description="Café" data-image="cafe.png">
-                <img src="../img/cafe.png" alt="Café">
-                <h3>Café - R$ 1,00</h3>
-                <p>Café</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Água" data-price="2.00" data-description="Água" data-image="agua.png">
-                <img src="../img/agua.png" alt="Água">
-                <h3>Água - R$ 2,00</h3>
-                <p>Água sem Gás</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Água com Gás" data-price="2.50" data-description="Água com Gás"
-                data-image="aguagas.png">
-                <img src="../img/aguagas.png" alt="Água com Gás">
-                <h3>Água com Gás - R$ 2,50</h3>
-                <p>Água com Gás</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-        </div>
+        
+        <?php
+            include "../model/consulta-produtos.php";
 
-        <div class="menu-container">
-            <h1>Comidas</h1>
-            <div class="menu-item" data-name="Coxinha" data-price="6.50" data-description="Coxinha"
-                data-image="coxinha.jpg">
-                <img src="../img/coxinha.jpg" alt="Coxinha">
-                <h3>Coxinha - R$ 6,50</h3>
-                <p>Salgado</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="MiniPizza" data-price="3.00" data-description="MiniPizza"
-                data-image="minipizza.png">
-                <img src="../img/minipizza.png" alt="MiniPizza">
-                <h3>MiniPizza - R$ 3,00</h3>
-                <p>Salgado</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Pão de Queijo" data-price="3.00" data-description="Pão de Queijo"
-                data-image="paodequeijo.png">
-                <img src="../img/paodequeijo.png" alt="Pão de Queijo">
-                <h3>Pão de Queijo - R$ 3,00</h3>
-                <p>Salgado</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Salsichão" data-price="6.50" data-description="Salsichão"
-                data-image="salsicha.png">
-                <img src="../img/salsicha.png" alt="Salsichão">
-                <h3>Salsichãoo - R$ 6,50</h3>
-                <p>Salgado</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Joelho" data-price="6.50" data-description="Joelho"
-                data-image="joelho.jpg">
-                <img src="../img/joelho.jpg" alt="Joelho">
-                <h3>Joelho - R$ 6,50</h3>
-                <p>Salgado</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Empada de Frango" data-price="6.50" data-description="Empada de Frango"
-                data-image="empada.jpg">
-                <img src="../img/empada.jpg" alt="Empada de Frango">
-                <h3>Empada de Frango - R$ 6,50</h3>
-                <p>Salgado</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Empada de Frango com Catupiry" data-price="6.50"
-                data-description="Empada de Frango com Catupiry" data-image="empadaFrangoCap.jpg">
-                <img src="../img/empadaFrangoCap.jpg" alt="Empada de Frango com Catupiry">
-                <h3>Empada de Frango com Catupiry - R$ 6,50</h3>
-                <p>Salgado</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-            <div class="menu-item" data-name="Empada de Bacon" data-price="6.50" data-description="Empada de Bacon"
-                data-image="empadaBacon.jpg">
-                <img src="../img/empadaBacon.jpg" alt="Empada de Bacon">
-                <h3>Empada de Bacon - R$ 6,50</h3>
-                <p>Salgado</p>
-                <p>Em estoque: X</p>
-                <a href="atualizarItem.php">
-                    <button class="btn-atualizar">Atualizar item</button>
-                </a>
-                <button class="btn-excluir">Excluir item</button>
-            </div>
-        </div>
+            $produtos = $result;
+            
+            if(count($produtos) > 0) {
+                ?>
+                <div class="menu-container">
+                    <h1>Bebidas</h1>
+                    <?php foreach($produtos as $produto) {
+                        if($produto['tipo'] === 'Bebida' || $produto['tipo'] === "bebida") {
+                            ?>
+                                <form class = "menu-item" method = "post" action = "../model/colocar-carrinho.php">
+                                    <input type="hidden" name="idProduto" value="<?php echo $produto['idProduto']?>">
+                                    <input type="hidden" name="idUser" value="<?php echo $_SESSION['idUser']?>">
+
+                                    <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
+                                    <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
+                                    <p><?php echo $produto['descricao'] ?></p>
+                                    <button type="submit" class = "btn-adicionar" onclick="alerta()">Adicionar ao carrinho</button>
+                                </form>
+                            <?php
+                        }
+                    } ?>
+                </div>
+
+                <div class="menu-container">
+                    <h1>Lanches</h1>
+                    <?php foreach($produtos as $produto) {
+                        if($produto['tipo'] === 'Salgado' || $produto['tipo'] === "salgado" || $produto['tipo'] === 'doce' || $produto['tipo'] === "Doce") {
+                            ?>
+                                <form class = "menu-item" method = "post" action = "../model/colocar-carrinho.php">
+                                    <input type="hidden" name="idProduto" value="<?php echo $produto['idProduto']?>">
+                                    <input type="hidden" name="idUser" value="<?php echo $_SESSION['idUser']?>">
+
+                                    <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
+                                    <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
+                                    <p><?php echo $produto['descricao'] ?></p>
+                                    <button type="submit" class = "btn-adicionar" onclick="alerta()">Adicionar ao carrinho</button>
+                                </form>
+                            <?php
+                        }
+                    } ?>
+                </div>
+                <?php
+            }
+        ?> 
+
     </section>
 </body>
 
