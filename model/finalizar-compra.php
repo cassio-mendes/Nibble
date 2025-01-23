@@ -1,6 +1,8 @@
 <?php
     include_once "../config/conexao.php";
 
+    echo "ID: " . var_dump($_POST);
+
     //Obtendo os id's e preços dos produtos no carrinho
     $result;
     try {
@@ -14,7 +16,7 @@
     } catch(Exception $e) {
         echo "Erro 1: " . $e->getMessage();
     }
-    echo "ID: " . $_POST['idUser'];
+    
     var_dump($result);
 
     //Calculando o valor total a ser pago

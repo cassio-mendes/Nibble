@@ -32,6 +32,7 @@
             }
         </script>
     <div class="botoes">
+        <h1><?php echo $_SESSION['idUser'] ?></h1>
         <form action="../model/finalizar-compra.php" method="post">
             <input type="hidden" name="idUser" value="<?php $_SESSION['idUser'] ?>">
             <button class="btn-finalizar-compra" type="submit">Finalizar Compra</button>
