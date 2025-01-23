@@ -32,9 +32,9 @@
         $data = new DateTime(); //Definindo a data da compra
         $dataCompra = $data['date'];
 
-        echo "Valor e data: ";
-        var_dump($valor);
-        var_dump($dataCompra);
+        //echo "Valor e data: ";
+        //var_dump($valor);
+        //var_dump($dataCompra);
         
         //Gerando token único e aleatório para representar o pedido
         $token = "";
