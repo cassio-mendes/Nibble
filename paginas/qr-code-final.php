@@ -22,9 +22,25 @@
     <script>
         let img = document.getElementById("img")
 
-        let client = "Teste"
-        let product = "Coxinha"
-        let codigo = "Cliente: " + client + "; Itens: " + product + " x1"
+        <?php
+            include_once "../config/conexao.php";
+
+            $sql = "SELECT token FROM pedido WHERE idUser = :idUser";
+            $statement = $pdo->prepare($sql);
+            $statement->bindParam(":idUser", $_SESSION['idUser']);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            $pedidoPronto;
+            foreach($result as $pedido) {
+                if(!$result['status']) {
+                    $pedidoPronto = $pedido;
+                    break;
+                }
+            }
+        ?>
+
+        let codigo = <?php echo $pedidoPronto['token'] ?>;
 
         QRCode.toDataURL(codigo, function(err, url) { //Essa função, da biblioteca qrcode, irá criar uma imagem QR Code contendo codigo
             if (err) throw err //Ignora possíveis erros  
