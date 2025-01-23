@@ -4,11 +4,7 @@
 
     // Verifica se o formulário foi enviado
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Imprime todos os dados POST para verificação
-        var_dump($_POST);
-        var_dump($_SESSION);
-
-        $idUser = $_POST['idUser'];
+        $idUser = $_SESSION['idUser'];
 
         //Obtendo os id's e preços dos produtos no carrinho
         $result;
