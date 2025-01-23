@@ -75,6 +75,7 @@
             $statement3->bindParam(":status", false); //Falso pq ainda não houve pagamento
             $statement3->bindParam(":token", $token);
             $statement3->execute();
+            var_dump($statement3);
         } catch(Exception $e3) {
             echo "Erro 3: " . $e3->getMessage();
         }
