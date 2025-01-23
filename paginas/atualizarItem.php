@@ -5,6 +5,14 @@
         header("Location: /nibble/paginas/login.php");
         exit();
     }
+
+    include_once "../config/conexao.php";
+
+    $sql = "SELECT * FROM produto WHERE idProduto = :idProduto;";
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(":idProduto", $_GET['idProduto']);
+    $statement->execute();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -23,21 +31,19 @@
         <form action="../model/atualizar-produto.php" method="post">
             <div class="input-group">
                 <label for="nome-produto">Novo nome do Produto</label>
-                <input type="text" id="atualiza-nome-produto" name="atualiza-nome-produto" required>
+                <input type="text" id="atualiza-nome-produto" name="atualiza-nome-produto" required
+                value="<?php echo $result['nome'] ?>">
             </div>
             <div class="input-group">
                 <label for="preco-produto">Novo preço (R$)</label>
-                <input type="number" id="atualiza-preco-produto" name="atualiza-preco-produto" required>
-            </div>
-
-            <div class="input-group">
-                <label for="quant-produto">Nova quantidade: </label>
-                <input type="number" name="atualiza-quant-produto" id="atualiza-quant-produto">
+                <input type="number" id="atualiza-preco-produto" name="atualiza-preco-produto" required
+                value="<?php echo $result['preco'] ?>">
             </div>
 
             <div class="input-group">
                 <label for="descricao-produto">Nova descrição do produto:</label>
-                <textarea id="atualiza-descricao-produto" name="atualiza-descricao-produto" rows="4" required></textarea>
+                <textarea id="atualiza-descricao-produto" name="atualiza-descricao-produto" rows="4" required
+                value="<?php echo $result['descricao'] ?>"></textarea>
             </div>
 
             <button type="submit" class="cardapio-btn">Salvar</button>
