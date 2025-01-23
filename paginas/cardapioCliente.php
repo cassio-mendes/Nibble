@@ -52,7 +52,7 @@
                         if($produto['tipo'] === 'Bebida' || $produto['tipo'] === "bebida") {
                             ?>
                                 <form class = "menu-item" method = "post" action = "../model/colocar-carrinho.php">
-                                    <input type="hidden" name="id_produto" value="<?php echo $produto['idProduto']?>">
+                                    <input type="hidden" name="idProduto" value="<?php echo $produto['idProduto']?>">
                                     <input type="hidden" name="idUser" value="<?php echo $_SESSION['idUser']?>">
 
                                     <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
@@ -71,7 +71,7 @@
                         if($produto['tipo'] === 'Salgado' || $produto['tipo'] === "salgado" || $produto['tipo'] === 'doce' || $produto['tipo'] === "Doce") {
                             ?>
                                 <form class = "menu-item" method = "post" action = "../model/colocar-carrinho.php">
-                                    <input type="hidden" name="id_produto" value="<?php echo $produto['idProduto']?>">
+                                    <input type="hidden" name="idProduto" value="<?php echo $produto['idProduto']?>">
                                     <input type="hidden" name="idUser" value="<?php echo $_SESSION['idUser']?>">
 
                                     <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
