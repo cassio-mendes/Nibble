@@ -68,7 +68,7 @@
         try {
             $sql3 = "INSERT INTO pedido (idUser, valor, dataCompra, status, token) VALUES (:idUser, :valor, :dataCompra, :status, :token);";
             $statement = $pdo->prepare($sql3);
-            $statement->bindParam(":idUser", $_POST['idUser']);
+            $statement->bindParam(":idUser", $idUser);
             $statement->bindParam(":valor", $valor);
             $statement->bindParam(":dataCompra", $dataCompra);
             $statement->bindParam(":status", false); //Falso pq ainda não houve pagamento
