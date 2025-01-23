@@ -40,7 +40,8 @@
             }
         ?>
 
-        let codigo = <?php echo $pedidoPronto['token'] ?>;
+        //let codigo = <?php echo $pedidoPronto['token'] ?>;
+        let codigo = "TESTE";
 
         QRCode.toDataURL(codigo, function(err, url) { //Essa função, da biblioteca qrcode, irá criar uma imagem QR Code contendo codigo
             if (err) throw err //Ignora possíveis erros  
