@@ -29,7 +29,8 @@
             $valor += $produto['preco'];
         }
 
-        $dataCompra = new DateTime(); //Definindo a data da compra
+        $data = new DateTime(); //Definindo a data da compra
+        $dataCompra = $data['date'];
 
         echo "Valor e data: ";
         var_dump($valor);
