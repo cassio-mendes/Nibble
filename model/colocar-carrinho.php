@@ -1,8 +1,5 @@
 <?php
-    include_once "../model/conexao.php";
-
-    echo $_POST['idUser'] . "   ";
-    echo $_POST['idProduto'];
+    include_once "../config/conexao.php";
 
     try {
         $sql = "INSERT INTO listaprodutos (idUser, idProduto) VALUES (:idUser, :idProduto)";
