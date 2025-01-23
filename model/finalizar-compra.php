@@ -29,11 +29,11 @@
             $valor += $produto['preco'];
         }
 
-        $data = new DateTime(); //Definindo a data da compra
-        $dataCompra = $data['date'];
+        //$data = new DateTime(); //Definindo a data da compra
+        //$dataCompra = $data[''];
 
-        //echo "Valor e data: ";
-        //var_dump($valor);
+        echo "Valor: ";
+        var_dump($valor);
         //var_dump($dataCompra);
         
         //Gerando token único e aleatório para representar o pedido
@@ -71,7 +71,7 @@
             $statement = $pdo->prepare($sql3);
             $statement->bindParam(":idUser", $idUser);
             $statement->bindParam(":valor", $valor);
-            $statement->bindParam(":dataCompra", $dataCompra);
+            $statement->bindParam(":dataCompra", "SEM DATA");
             $statement->bindParam(":status", false); //Falso pq ainda não houve pagamento
             $statement->bindParam(":token", $token);
             $statement->execute();
