@@ -42,8 +42,9 @@
 
             <div class="input-group">
                 <label for="descricao-produto">Nova descrição do produto:</label>
-                <textarea id="atualiza-descricao-produto" name="atualiza-descricao-produto" rows="4" required
-                value="<?php echo $result['descricao'] ?>"></textarea>
+                <textarea id="atualiza-descricao-produto" name="atualiza-descricao-produto" rows="4" required>
+                    <?php echo $result['descricao'] ?>
+                </textarea>
             </div>
 
             <button type="submit" class="cardapio-btn">Salvar</button>
