@@ -1,7 +1,7 @@
 <?php
     include_once "../model/conexao.php";
 
-    echo $_POST['idUser'];
+    echo $_POST['idUser'] . "   ";
     echo $_POST['idProduto'];
 
     try {
