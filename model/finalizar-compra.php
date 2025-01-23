@@ -15,6 +15,7 @@
         echo "Erro 1: " . $e->getMessage();
     }
     
+    var_dump($result);
 
     //Calculando o valor total a ser pago
     $valor = 0.0;
@@ -23,6 +24,9 @@
     }
 
     $dataCompra = new DateTime(); //Definindo a data da compra
+
+    var_dump($valor);
+    var_dump($dataCompra);
     
     //Gerando token único e aleatório para representar o pedido
     $token = "";
@@ -50,6 +54,7 @@
         echo "Erro 2: " . $e2->getMessage();
     }
     
+    var_dump($token);
 
     //Realizando a inserção do pedido no banco
     try {
@@ -77,6 +82,8 @@
     } catch(Exception $e4) {
         echo "Erro 4: " . $e4->getMessage();
     }
+
+    var_dump($idPedido);
 
     //Realizando a inserção dos produtos comprados no pedido
     try {
