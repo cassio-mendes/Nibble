@@ -14,7 +14,7 @@
     } catch(Exception $e) {
         echo "Erro 1: " . $e->getMessage();
     }
-    
+    echo "ID: " . $_POST['idUser'];
     var_dump($result);
 
     //Calculando o valor total a ser pago
