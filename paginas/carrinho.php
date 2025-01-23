@@ -32,11 +32,26 @@
             }
         </script>
     <div class="botoes">
-        <button class="btn-finalizar-compra">Finalizar Compra</button>
-        <button class="btn-continuar-comprando">Continuar Comprando</button>
-        <button class="btn-cancelar-compra">Cancelar Compra</button>
+        <form action="../model/finalizar-compra.php" method="post">
+            <input type="hidden" name="idUser" value="<?php $_SESSION['idUser'] ?>">
+            <button class="btn-finalizar-compra" type="submit">Finalizar Compra</button>
+        </form>
+        
+        <button class="btn-continuar-comprando" onclick="voltar()">Continuar Comprando</button>
+
+        <form action="../model/cancelar-compra.php" method="post">
+            <input type="hidden" name="idUser" value="<?php $_SESSION['idUser'] ?>">    
+            <button class="btn-cancelar-compra" type="submit">Cancelar Compra</button>
+        </form>
     </div>
 </section>
+
+<script>
+    function voltar() {
+        location.href = "https://feiratec.dev.br/nibble/paginas/cardapioCliente.php";
+    }
+</script>
+
 </body>
 
 </html>
