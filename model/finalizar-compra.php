@@ -6,6 +6,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Imprime todos os dados POST para verificação
         var_dump($_POST);
+        var_dump($_SESSION);
 
         $idUser = $_POST['idUser'];
 
