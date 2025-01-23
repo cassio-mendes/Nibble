@@ -68,13 +68,13 @@
         //Realizando a inserção do pedido no banco
         try {
             $sql3 = "INSERT INTO pedido (idUser, valor, dataCompra, status, token) VALUES (:idUser, :valor, :dataCompra, :status, :token);";
-            $statement = $pdo->prepare($sql3);
-            $statement->bindParam(":idUser", $idUser);
-            $statement->bindParam(":valor", $valor);
-            $statement->bindParam(":dataCompra", "SEM DATA");
-            $statement->bindParam(":status", false); //Falso pq ainda não houve pagamento
-            $statement->bindParam(":token", $token);
-            $statement->execute();
+            $statement3 = $pdo->prepare($sql3);
+            $statement3->bindParam(":idUser", $idUser);
+            $statement3->bindParam(":valor", $valor);
+            $statement3->bindParam(":dataCompra", "SEM DATA");
+            $statement3->bindParam(":status", false); //Falso pq ainda não houve pagamento
+            $statement3->bindParam(":token", $token);
+            $statement3->execute();
         } catch(Exception $e3) {
             echo "Erro 3: " . $e3->getMessage();
         }
@@ -84,10 +84,10 @@
         $idPedido;
         try {
             $sql4 = "SELECT idPedido FROM pedido WHERE token = :token;";
-            $statement = $pdo->prepare($sql4);
-            $statement->bindParam(":token", $token);
-            $statement->execute();
-            $idPedido = $statement->fetch(PDO::FETCH_ASSOC);
+            $statement4 = $pdo->prepare($sql4);
+            $statement4->bindParam(":token", $token);
+            $statement4->execute();
+            $idPedido = $statement4->fetch(PDO::FETCH_ASSOC);
         } catch(Exception $e4) {
             echo "Erro 4: " . $e4->getMessage();
         }
