@@ -87,7 +87,16 @@
                                     <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
                                     <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
                                     <p><?php echo $produto['descricao'] ?></p>
-                                    <button type="submit" class = "btn-adicionar" onclick="alerta()">Adicionar ao carrinho</button>
+                                    
+                                    <form action="atualizarItem.php" method="get">
+                                        <input type="hidden" name="idProduto" value="<?php echo $produto['idProduto'] ?>">
+                                        <button type="submit" class = "btn-atualizar">Atualizar Item</button>
+                                    </form>
+                                    
+                                    <form action="../model/excluir-produto.php" method="post">
+                                        <input type="hidden" name="idProduto" value="<?php echo $produto['idProduto'] ?>">
+                                        <button type="submit" class = "btn-excluir">Excluir Item</button>
+                                    </form>
                                 </form>
                             <?php
                         }
