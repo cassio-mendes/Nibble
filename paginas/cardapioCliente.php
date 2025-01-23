@@ -51,11 +51,14 @@
                     <?php foreach($produtos as $produto) {
                         if($produto['tipo'] === 'Bebida' || $produto['tipo'] === "bebida") {
                             ?>
-                                <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto    ['preco'] ?>" data-description = "<?php echo $produto['descricao'] ?>" data-image = "../<?php echo $produto['imagem']?>" method = "post" action = "../model/colocar-carrinho.php">
+                                <form class = "menu-item" method = "post" action = "../model/colocar-carrinho.php">
+                                    <input type="hidden" name="id_produto" value="<?php echo $produto['idProduto']?>">
+                                    <input type="hidden" name="idUser" value="<?php echo $_SESSION['idUser']?>">
+
                                     <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
                                     <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
                                     <p><?php echo $produto['descricao'] ?></p>
-                                    <button type="submit" class = "btn-adicionar">Adicionar ao carrinho</button>
+                                    <button type="submit" class = "btn-adicionar" onclick="alerta()">Adicionar ao carrinho</button>
                                 </form>
                             <?php
                         }
@@ -67,11 +70,14 @@
                     <?php foreach($produtos as $produto) {
                         if($produto['tipo'] === 'Salgado' || $produto['tipo'] === "salgado" || $produto['tipo'] === 'doce' || $produto['tipo'] === "Doce") {
                             ?>
-                                <form class = "menu-item" data-name = "<?php echo $produto['nome'] ?>" data-price = "<?php echo $produto    ['preco'] ?>" data-description = "<?php echo $produto['descricao'] ?>" data-image = "../<?php echo $produto['imagem']?>" method = "post" action = "../model/colocar-carrinho.php">
+                                <form class = "menu-item" method = "post" action = "../model/colocar-carrinho.php">
+                                    <input type="hidden" name="id_produto" value="<?php echo $produto['idProduto']?>">
+                                    <input type="hidden" name="idUser" value="<?php echo $_SESSION['idUser']?>">
+
                                     <img src="../<?php echo $produto['imagem']?>" alt="<?php echo $produto['descricao'] ?>">
                                     <h3><?php echo $produto['nome'] ?> - R$ <?php echo $produto['preco'] ?></h3>
                                     <p><?php echo $produto['descricao'] ?></p>
-                                    <button type="submit" class = "btn-adicionar">Adicionar ao carrinho</button>
+                                    <button type="submit" class = "btn-adicionar" onclick="alerta()">Adicionar ao carrinho</button>
                                 </form>
                             <?php
                         }
@@ -83,6 +89,10 @@
     </section>
 
     <script>
+        function alerta() {
+            alert("Produto adicionado ao carrinho! :)");
+        }
+        
         const adicionarBotoes = document.querySelectorAll('.btn-adicionar');
         adicionarBotoes.forEach(btn => {
             btn.addEventListener('click', () => {
