@@ -11,4 +11,5 @@
         echo "ERRO: " . $ex->getMessage();
     }
     
+    header("Location: /nibble/paginas/cardapioCliente.php");
 ?>
