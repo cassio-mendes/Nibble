@@ -32,7 +32,23 @@
             }
         </script>
     <div class="botoes">
-        <h1><?php echo $_SESSION['idUser'] ?></h1>
+        <?php
+            include_once "../config/conexao.php";
+
+            $sql = "SELECT produto.nome, produto.preco FROM produto JOIN listaprodutos lp ON produto.idProduto = lp.idProduto
+            JOIN usuario u ON lp.idUser = u.idUser WHERE u.idUser = :idUser;";
+
+            $statement = $pdo->prepare($sql);
+            $statement->bindParam(":idUser", $_SESSION['idUser']);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach($result as $produto) {
+                ?>
+                    <h1><?php echo $produto['nome']?> - R$<?php echo $produto['preco']?></h1>
+                <?php
+            }
+        ?>
         <form action="../model/finalizar-compra.php" method="post">
             <input type="hidden" name="idUser" value="<?php $_SESSION['idUser'] ?>">
             <button class="btn-finalizar-compra" type="submit">Finalizar Compra</button>
